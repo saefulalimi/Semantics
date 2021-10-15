@@ -16,14 +16,6 @@ function App() {
   return (
     <div className="App">
       <Router history={history}>
-        <Nav>
-          <Link to="/">Home</Link>
-          <Link to="/register">Register</Link>
-          <Link to="/login">Login</Link>
-          <Link to="/dashboard">Dashboard</Link>
-          <Link to="/profile">Proile</Link>
-          <Link to="/activity">Activity</Link>
-        </Nav>
         <Switch>
           <Route path="/" exact component={HomePage} />
           <Route path="/home" exact component={HomePage} />

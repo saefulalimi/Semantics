@@ -24,11 +24,11 @@ function Dashboard() {
           logo
           {/* navigation */}
           <nav>
+           <Link className="block py-2 px-4" to="/profile">
+              Profile
+            </Link>
             <Link className="block py-2 px-4" to="/activity">
               Activity
-            </Link>
-            <Link className="block py-2 px-4" to="/profile">
-              Profile
             </Link>
             <button onClick={handleLogout}>Logout</button>
           </nav>
