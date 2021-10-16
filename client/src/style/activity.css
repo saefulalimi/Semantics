@@ -88,6 +88,12 @@ textarea:focus {
   cursor: pointer;
 }
 
+.tag-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 0.4em;
+}
+
 .search {
   display: flex;
   align-items: center;

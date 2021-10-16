@@ -51,10 +51,8 @@ class noteController {
 
   static deleteNote = async (req, res, next) => {
     try {
-      console.log("masuk delete controler");
       const currentUser = req.currentUser;
       const remove = req.body;
-      console.log(remove);
 
       const data = await userModel.findOne({ _id: currentUser._id });
       if (!data) {
@@ -63,7 +61,6 @@ class noteController {
       }
       const latestNote = data.activity.subject;
       const filtering = latestNote.filter((note) => note.id !== remove.id);
-      console.log("ini adalah data filtering", filtering);
       const update = await userModel.updateOne(
         { _id: currentUser._id },
         { $set: { "activity.subject": filtering } }
