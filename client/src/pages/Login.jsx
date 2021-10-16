@@ -3,8 +3,11 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../redux/action";
 import { useHistory } from "react-router-dom";
-
+import '../style/register.css'
+import { Link } from "react-router-dom"
+import Logo from '../assets/logo.png'
 import { Box, TextField, Button } from "@mui/material";
+import NavigateHome from "../component/navbar/NavbarHome.js"
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -26,37 +29,37 @@ function Login() {
   };
 
   return (
-    <div>
-      <Box
-        component="form"
-        sx={{
-          "& .MuiTextField-root": { m: 1, width: "25ch" },
-        }}
-        noValidate
-        autoComplete="off"
-        onSubmit={handleSubmit}
-      >
-        <div>
-          <TextField
-            required
-            label="Email"
-            type="text"
-            autoComplete="off"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <TextField
-            required
-            label="Password"
-            type="password"
-            autoComplete="off"
-            onChange={(e) => setPassword(e.target.value)}
-          />
+    <div className="homeReg">
+      <NavigateHome/>
+    <div className="containerReg">
+      <div className="wraperReg">
+      <Box className="boxReg" component="form" sx={{"& .MuiTextField-root": { m: 1, width: "25ch" }, }}
+        noValidate autoComplete="off" onSubmit={handleSubmit}>
+
+        <div className="handleReg">
+            <div className="logoReg">
+              <img src={Logo} alt="gambar-logo"/>
+            </div>
+            <div className="introReg">
+              <h1>Log In</h1>
+              <p>thankyou for wanting to join semantics</p>
+            </div>
+          </div>
+
+         <div className="childReg">
+            <div className="formReg">
+              <input className="childBox" placeholder="  username" label="Email" type="text" autoComplete="off" onChange={(e) => setEmail(e.target.value)}/>
+            </div>
+            <div className="formReg">
+              <input className="childBox" placeholder="  password" label="Password" type="password" autoComplete="off" onChange={(e) => setPassword(e.target.value)}/>
+            </div>
+            <button className="btnReg" onClick={handleSubmit}>Login</button>
+            <span>you can’t have acount?<Link to="/register"> signup</Link></span>
         </div>
-        <Button variant="contained" onClick={handleSubmit}>
-          Log-In
-        </Button>
       </Box>
+      </div>
     </div>
+  </div>
   );
 }
 
