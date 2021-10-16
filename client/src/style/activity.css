@@ -84,7 +84,8 @@ textarea:focus {
   justify-content: space-between;
 }
 
-.delete-icon {
+.delete-icon,
+.edit-icon {
   cursor: pointer;
 }
 

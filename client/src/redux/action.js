@@ -50,8 +50,6 @@ export const logoutUser = () => {
 
 //notes
 export const addNote = (data) => {
-  console.log("action jalan");
-  console.log(data);
   return (async) => {
     return Axios.post(`${baseUrl}/notes`, data.data, {
       headers: {
@@ -81,6 +79,20 @@ export const getNotes = (data) => {
 export const deleteNote = (data) => {
   return (async) => {
     return Axios.patch(`${baseUrl}/notes`, data.data, {
+      headers: {
+        token: data.token,
+      },
+    }).then((res) => {
+      console.log(res);
+      localStorage.setItem("subject", JSON.stringify(res.data.data));
+    });
+  };
+};
+
+export const updateNote = (data) => {
+  return (async) => {
+    console.log(data);
+    return Axios.patch(`${baseUrl}/notes/update`, data.data, {
       headers: {
         token: data.token,
       },

@@ -14,6 +14,7 @@ const Activity = () => {
   const [status, setStatus] = useState(false);
   const [note, setNote] = useState(null);
   const [notes, setNotes] = useState([]);
+  const [editNote, setEditNote] = useState(null);
 
   const [searchText, setSearchText] = useState("");
 
@@ -34,26 +35,43 @@ const Activity = () => {
       setNote(null);
       setStatus(false);
     }
-  }, [status]);
+  }, [status, dispatch, token, note]);
 
   useEffect(() => {
     setNotes(JSON.parse(localStorage.getItem("subject")));
   }, []);
 
-  const addNote = (text) => {
-    const date = new Date();
-    const newNote = {
-      id: nanoid(),
-      text: text,
-      date: date.toLocaleDateString(),
-    };
-    setNote(newNote);
-    setStatus(true);
+  const addNote = ({ id, text, date }) => {
+    if (id) {
+      const updateNote = {
+        id: id,
+        text: text,
+        date: date,
+      };
+      async function updatePartial() {
+        const data = {
+          token,
+          data: updateNote,
+        };
+        await dispatch(action.updateNote(data));
+        const latest = JSON.parse(localStorage.getItem("subject"));
+        setNotes(latest);
+      }
+      updatePartial();
+    } else {
+      const date = new Date();
+      const newNote = {
+        id: nanoid(),
+        text: text,
+        date: date.toLocaleDateString(),
+      };
+      setNote(newNote);
+      setStatus(true);
+    }
   };
 
   const deleteNote = (id) => {
     const deleteToBackend = notes.filter((note) => note.id === id);
-    console.log(deleteToBackend[0]);
     const data = {
       token,
       data: deleteToBackend[0],
@@ -66,6 +84,23 @@ const Activity = () => {
     deleteNote();
   };
 
+  const updateNote = (id) => {
+    const UpdateToBackend = notes.filter((note) => note.id === id);
+    console.log("data yang mau di update", UpdateToBackend[0]);
+    setEditNote(UpdateToBackend[0]);
+    // const data = {
+    //   token,
+    //   data: UpdateToBackend[0],
+    // };
+
+    // async function UpdateNote() {
+    //   await dispatch(action.updateNote(data));
+    //   const latest = JSON.parse(localStorage.getItem("subject"));
+    //   setNotes(latest);
+    // }
+    // UpdateNote();
+  };
+
   return (
     <div className={`${darkMode && "dark-mode"}`}>
       <div className="container">
@@ -75,10 +110,13 @@ const Activity = () => {
           notes={notes.filter((note) =>
             note.text.toLowerCase().includes(searchText)
           )}
+          editNote={editNote}
+          setEditNote={setEditNote}
           note={note}
           setNote={setNote}
           handleAddNote={addNote}
           handleDeleteNote={deleteNote}
+          updateNote={updateNote}
         />
       </div>
     </div>

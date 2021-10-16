@@ -72,6 +72,39 @@ class noteController {
       next(error);
     }
   };
+
+  static updateNote = async (req, res, next) => {
+    try {
+      const currentUser = req.currentUser;
+      const data = req.body;
+
+      const latestData = await userModel.findOne({ _id: currentUser._id });
+      if (!latestData) {
+        next({ code: 404, message: "User Not Found" });
+        return;
+      }
+
+      let updating = [];
+      latestData.activity.subject.map((note) => {
+        note.id === data.id
+          ? (updating = [...updating, data])
+          : (updating = [...updating, note]);
+      });
+
+      const update = await userModel.updateOne(
+        { _id: currentUser._id },
+        {
+          $set: { "activity.subject": updating },
+        }
+      );
+
+      res.status(200).json({
+        data: updating,
+      });
+    } catch (error) {
+      next(error);
+    }
+  };
 }
 
 module.exports = noteController;
