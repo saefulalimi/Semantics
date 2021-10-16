@@ -1,5 +1,7 @@
 import Axios from "axios";
 
+const baseUrl = "http://localhost:8888";
+
 export const register = (data) => {
   return (async) => {
     return Axios.post(`http://localhost:8888/users/register`, data)
@@ -19,30 +21,14 @@ export const loginUser = (data) => {
         .then((res) => {
           dispatch(setToken(res.data));
           console.log(res);
-          localStorage.setItem(
-            "subject",
-            JSON.stringify(res.data.activity.subject)
-          );
-          localStorage.setItem(
-            "upcomingexam",
-            JSON.stringify(res.data.activity.upcomingexam)
-          );
-          localStorage.setItem(
-            "seminar",
-            JSON.stringify(res.data.activity.seminar)
-          );
-          localStorage.setItem(
-            "workshop",
-            JSON.stringify(res.data.activity.workshop)
-          );
-          localStorage.setItem(
-            "competition",
-            JSON.stringify(res.data.activity.competition)
+          JSON.parse(
+            localStorage.setItem(
+              "subject",
+              JSON.stringify(res.data.activity.subject)
+            )
           );
         })
-        .catch((error) => {
-          console.log(error);
-        });
+        .catch((err) => console.log(err));
     } catch (error) {
       console.log(error);
     }
@@ -59,6 +45,61 @@ export const setToken = (data) => {
 export const logoutUser = () => {
   return {
     type: "USER_LOGOUT",
+  };
+};
+
+//notes
+export const addNote = (data) => {
+  return (async) => {
+    return Axios.post(`${baseUrl}/notes`, data.data, {
+      headers: {
+        token: data.token,
+      },
+    }).then((res) => {
+      console.log(res);
+      localStorage.setItem("subject", JSON.stringify(res.data.data));
+      return res.data.data;
+    });
+  };
+};
+
+export const getNotes = (data) => {
+  return (async) => {
+    return Axios.get(`${baseUrl}/notes`, data.data, {
+      headers: {
+        token: data.token,
+      },
+    }).then((res) => {
+      console.log(res);
+      return res.data;
+    });
+  };
+};
+
+export const deleteNote = (data) => {
+  return (async) => {
+    return Axios.patch(`${baseUrl}/notes`, data.data, {
+      headers: {
+        token: data.token,
+      },
+    }).then((res) => {
+      console.log(res);
+      localStorage.setItem("subject", JSON.stringify(res.data.data));
+    });
+  };
+};
+
+export const updateNote = (data) => {
+  return (async) => {
+    console.log(data);
+    return Axios.patch(`${baseUrl}/notes/update`, data.data, {
+      headers: {
+        token: data.token,
+      },
+    }).then((res) => {
+      console.log(res);
+      localStorage.setItem("subject", JSON.stringify(res.data.data));
+    });
   };
 };
 

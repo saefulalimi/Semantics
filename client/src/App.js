@@ -1,7 +1,7 @@
 import React from "react";
-import { Router, Switch, Route, Link } from "react-router-dom";
+import { Router, Switch, Route } from "react-router-dom";
 
-import GeneralNote from "./pages/GeneralNote"
+import GeneralNote from "./pages/GeneralNote";
 import HomePage from "./pages/HomePage";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
@@ -10,8 +10,6 @@ import PrivateRoute from "./utils/privateRoute";
 import history from "./utils/history";
 import Profile from "./pages/Profile";
 import Activity from "./pages/Activity";
-
-import Nav from "./component/navbar/Navbar";
 
 function App() {
   return (
