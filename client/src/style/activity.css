@@ -43,6 +43,7 @@ code {
 
 .note.new {
   background-color: #67d7cc;
+  height: 98%;
 }
 
 textarea {
@@ -68,14 +69,18 @@ textarea:focus {
 }
 
 .note {
-  background-color: rgb(62, 59, 226);
+  background-color: #fcfafb;
   border-radius: 10px;
   padding: 1rem;
-  min-height: 170px;
+  min-height: 230px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   white-space: pre-wrap;
+}
+
+.note:hover + .hidden {
+  display: block;
 }
 
 .note-footer {
@@ -87,12 +92,6 @@ textarea:focus {
 .delete-icon,
 .edit-icon {
   cursor: pointer;
-}
-
-.tag-wrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 0.4em;
 }
 
 .search {
