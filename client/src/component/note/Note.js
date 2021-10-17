@@ -23,13 +23,7 @@ const Note = ({ id, text, date, handleDeleteNote, updateNote }) => {
 
   return (
     <Flippy flipOnHover={false} flipOnClick={false} flipDirection="horizontal">
-      <FrontSide
-        style={{
-          padding: "0",
-          borderRadius: "20px",
-          height: "97%",
-        }}
-      >
+      <FrontSide id="front">
         <div
           className={`note shadow-xl border-t-4 ${borderColor(
             Math.random() * 10
@@ -38,9 +32,12 @@ const Note = ({ id, text, date, handleDeleteNote, updateNote }) => {
           <span>{text}</span>
           <div className="note-footer">
             <small className="font-semibold">{date}</small>
-            <span className="flex flex-row opacity-0 hover:opacity-100 transition ease-in-out duration-100">
+            <span className="flex flex-row opacity-100 md:opacity-0 md:hover:opacity-100 transition ease-in-out duration-100">
               <BsVectorPen
-                onClick={() => updateNote(id)}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  updateNote(id);
+                }}
                 className="edit-icon"
                 size="1.3em"
               />
@@ -67,12 +64,7 @@ const Note = ({ id, text, date, handleDeleteNote, updateNote }) => {
           </div>
         </div>
       </FrontSide>
-      <BackSide
-        style={{
-          borderRadius: "20px",
-          height: "97%",
-        }}
-      >
+      <BackSide id="back">
         <h2>Haloo kawann</h2>
       </BackSide>
     </Flippy>

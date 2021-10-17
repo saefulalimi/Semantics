@@ -44,7 +44,7 @@ code {
 
 .note.new {
   background-color: #67d7cc;
-  height: 98%;
+  height: 50%;
 }
 
 textarea {
@@ -105,4 +105,41 @@ textarea:focus {
 
 .search input:focus {
   outline: none;
+}
+
+@media screen and (max-width: 768px) {
+  .note.new {
+    background-color: #67d7cc;
+    height: 50%;
+  }
+
+  #text-input {
+    height: auto;
+  }
+
+  #front {
+    padding: 0;
+    border-radius: 20px;
+    height: 50%;
+  }
+
+  #back {
+    padding: 0;
+    border-radius: 20px;
+    height: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #front {
+    padding: 0;
+    border-radius: 20px;
+    height: 95%;
+  }
+
+  #back {
+    padding: 0;
+    border-radius: 20px;
+    height: 95%;
+  }
 }

@@ -7,6 +7,7 @@ const userController = require("../controllers/user");
 const userModel = require("../models/user");
 const auth = require("../middlewares/authentication");
 
+//Uploading
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, `./public/upload`);
@@ -29,18 +30,19 @@ const upload = multer({
     fileSize: 1024 * 1024 * 2,
   },
 });
+//
 
 user.post("/users/register", userController.reg);
 user.post("/users/login", userController.log);
 user.post("/users/update", auth, userController.update);
-user.patch(
+user.post(
   "/users/upload",
   auth,
   upload.single("picture"),
   async (req, res, next) => {
     const currentUser = req.currentUser;
-    let finalUrlImage =
-      "http://localhost:8888" + "/upload/" + req.file.filename;
+    const fileName = req.file.filename;
+
     const user = await userModel.findOne({ _id: currentUser._id });
     if (!user) {
       next({ code: 404, message: "User tidak ditemukan" });
@@ -49,13 +51,15 @@ user.patch(
     const avatar = await userModel.updateOne(
       { _id: currentUser._id },
       {
-        $set: { avatar: req.file.filename },
+        $set: { avatar: fileName },
       }
     );
 
+    const newUpdate = await userModel.findOne({ _id: currentUser._id });
+
     res.status(200).json({
       status: "success",
-      image: "http://localhost:8888/upload/" + user.avatar,
+      image: "http://localhost:8888/upload/" + newUpdate.avatar,
     });
   }
 );

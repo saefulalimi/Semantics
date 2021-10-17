@@ -1,4 +1,5 @@
 import React from "react";
+import { BsTrash } from "react-icons/bs";
 
 const Sidebar = ({
   notes,
@@ -10,7 +11,7 @@ const Sidebar = ({
   const sortedNotes = notes.sort((a, b) => b.lastModified - a.lastModified);
 
   return (
-    <div className="app-sidebar">
+    <div className="md:w-full">
       <div className="app-sidebar-header">
         <h2>GENERAL NOTE</h2>
         <button onClick={onAddNote}>
@@ -24,19 +25,23 @@ const Sidebar = ({
           </svg>
         </button>
       </div>
-      <div className="app-sidebar-notes">
+      <div className="h-full overflow-auto md:max-h-screen">
         {sortedNotes.map(({ id, title, body, lastModified }, i) => (
           <div
-            className={`app-sidebar-note ${id === activeNote && "active"}`}
+            className={`app-sidebar-note border-t-2 border-black ${
+              id === activeNote && "active"
+            }`}
             key={id}
             onClick={() => setActiveNote(id)}
           >
             <div className="sidebar-note-title">
-              <strong>{title}</strong>
-              <button onClick={(e) => onDeleteNote(id)}>delete</button>
+              <strong>Title : {title && title.substr(0, 20) + "..."}</strong>
+              <button onClick={(e) => onDeleteNote(id)}>
+                <BsTrash />
+              </button>
             </div>
 
-            <p>{body && body.substr(0, 100) + "..."}</p>
+            <p>{body && body.substr(0, 20) + "..."}</p>
             <small className="note-meta">
               Last Modified{" "}
               {new Date(lastModified).toLocaleDateString("en-GB", {

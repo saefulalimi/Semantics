@@ -85,12 +85,13 @@ const Activity = () => {
   };
 
   const updateNote = (id) => {
+    window.scrollTo(0, 0);
     const UpdateToBackend = notes.filter((note) => note.id === id);
     setEditNote(UpdateToBackend[0]);
   };
 
   return (
-    <div className={`${darkMode && "dark-mode"}`}>
+    <div className={`w-full h-auto ${darkMode && "dark-mode"}`}>
       <div className="container">
         <Header handleToggleDarkMode={setDarkMode} />
         <Search handleSearchNote={setSearchText} />

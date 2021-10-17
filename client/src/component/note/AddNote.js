@@ -45,8 +45,7 @@ const AddNote = ({ editNote, setEditNote, handleAddNote }) => {
   return (
     <div className="note new">
       <textarea
-        rows="8"
-        cols="10"
+        id="text-input"
         placeholder="Type to add a note..."
         value={noteText}
         onChange={handleChange}

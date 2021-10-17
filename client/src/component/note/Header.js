@@ -3,7 +3,7 @@ import React from "react";
 const Header = ({ handleToggleDarkMode }) => {
   return (
     <div className="header">
-      <h1 className="text-2xl">Notes</h1>
+      <h1 className="text-2xl">Important Notes</h1>
       <button
         onClick={() =>
           handleToggleDarkMode((previousDarkMode) => !previousDarkMode)

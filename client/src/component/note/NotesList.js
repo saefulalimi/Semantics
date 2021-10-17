@@ -13,7 +13,7 @@ const NotesList = ({
   setEditNote,
 }) => {
   return (
-    <div className="notes-list">
+    <div className="notes-list h-full ">
       <AddNote
         note={note}
         setNote={setNote}
