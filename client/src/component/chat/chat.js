@@ -1,6 +1,6 @@
 import "./chat.scss";
 import { to_Decrypt, to_Encrypt } from "../aes.js";
-import { process } from "../store/action/index";
+import { process } from "../chat/store/action/index";
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 //gets the data from the action object and reducers defined earlier
