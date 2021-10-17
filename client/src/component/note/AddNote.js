@@ -19,7 +19,6 @@ const AddNote = ({ editNote, setEditNote, handleAddNote }) => {
         setNoteText("");
       }
     } else {
-      console.log("masuk ke sini");
       if (noteText.trim().length > 0) {
         handleAddNote({
           id: noteUpdate.id,
@@ -53,8 +52,13 @@ const AddNote = ({ editNote, setEditNote, handleAddNote }) => {
         onChange={handleChange}
       ></textarea>
       <div className="note-footer">
-        <small>{characterLimit - noteText.length} Remaining</small>
-        <button className="save" onClick={handleSaveClick}>
+        <small className="font-semibold">
+          {characterLimit - noteText.length} Remaining
+        </small>
+        <button
+          className="save px-3 py-1 rounded-md hover:bg-green-500 hover:text-black"
+          onClick={handleSaveClick}
+        >
           Save
         </button>
       </div>

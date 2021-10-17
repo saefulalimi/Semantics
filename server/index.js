@@ -10,7 +10,11 @@ const PORT = process.env.PORT;
 const Main = require("./Routers/index");
 const errorHandler = require("./middlewares/errorHandler");
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
