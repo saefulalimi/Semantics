@@ -47,10 +47,19 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Sidebar notes={notes} onAddNote={onAddNote} onDeleteNote={onDeleteNote} activeNote={activeNote}
-        setActiveNote={setActiveNote}/>
-      <Main activeNote={getActiveNote()} onUpdateNote={onUpdateNote} />
+    <div className="md:flex md:flex-row md:max-h-screen">
+      <div className="hidden left md:block md:w-1/4">
+        <Sidebar
+          notes={notes}
+          onAddNote={onAddNote}
+          onDeleteNote={onDeleteNote}
+          activeNote={activeNote}
+          setActiveNote={setActiveNote}
+        />
+      </div>
+      <div className="w-full right md:w-full md:mx-8 md:my-5 md:flex-1">
+        <Main activeNote={getActiveNote()} onUpdateNote={onUpdateNote} />
+      </div>
     </div>
   );
 }
