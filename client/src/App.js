@@ -10,6 +10,7 @@ import PrivateRoute from "./utils/privateRoute";
 import history from "./utils/history";
 import Profile from "./pages/Profile";
 import Activity from "./pages/Activity";
+import Calendar from "./pages/Calendar"
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/profile" exact component={Profile} />
           <Route path="/activity" exact component={Activity} />
           <Route path="/general-note" exact component={GeneralNote} />
+          <Route path="/calendar" exact component={Calendar} />
           <PrivateRoute path="/dashboard" exact component={Dashboard} />
         </Switch>
       </Router>

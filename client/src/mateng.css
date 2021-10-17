@@ -676,6 +676,14 @@ video {
   margin-top: 0.5rem;
 }
 
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -771,6 +779,10 @@ video {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.align-top {
+  vertical-align: top;
 }
 
 .text-2xl {

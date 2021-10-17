@@ -2,6 +2,9 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../redux/action";
 import { Link, useHistory } from "react-router-dom";
+import logo from '../assets/logo.png'
+import '../style/dashbord.css'
+import Clock from '../component/clock/Clock'
 
 function Dashboard() {
   const history = useHistory();
@@ -19,32 +22,35 @@ function Dashboard() {
 
   return (
     <div>
-      <div className="relative min-h-screen flex">
-        <div className="bg-blue-800 text-blue-100 w-64">
-          logo
-          {/* navigation */}
-          <nav>
-           <Link className="block py-2 px-4" to="/profile">
-              Profile
-            </Link>
-            <Link className="block py-2 px-4" to="/activity">
-              Activity
-            </Link>
-            <Link className="block py-2 px-4" to="/general-note">
-              General Note
-            </Link>
-            <button onClick={handleLogout}>Logout</button>
-          </nav>
+      <div className="dashboardapp">
+        <div className="dashboardpar">
+            <div className="logodas">
+              <img src={logo} alt="" srcset="" />
+              <h6>Semantics Apps</h6>
+            </div>
+          <nav className="navdash">
+            <Link className="childdas" to="/profile">
+                 Profile
+              </Link>
+              <Link className="childdas" to="/activity">
+                  Activity
+              </Link>
+              <Link className="childdas" to="/general-note">
+                  General Note
+              </Link>
+              <Link className="childdas" to="/calendar">
+                  Calendar
+              </Link>
+              <button onClick={handleLogout}>Logout</button>
+           </nav>
         </div>
-        {/* content */}
-        <div className="flex-1 p-10 text-2xl font-bold">
+        
+        <div className="pagedas">
           <h2>Dashboard</h2>
+          <h1><Clock/></h1>
         </div>
-      </div>
 
-      <button>
-        <Link to="/activity">Activity</Link>
-      </button>
+      </div>
     </div>
   );
 }

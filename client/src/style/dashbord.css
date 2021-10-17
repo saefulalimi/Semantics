@@ -1,0 +1,51 @@
+.dashboardapp{
+    display: flex;
+    /* justify-content: center; */
+}
+
+.dashboardpar{
+    width: 15%;
+    height: 720px;
+    background-color: #ED4C67;
+}
+
+.pagedas{
+    width: 70%;
+}
+.navdash{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    margin: 5px;
+    /* background-color: #ED4C67; */
+    /* padding: .5rem; */
+}
+
+.childdas{
+    margin: .5rem;
+    background-color: #B53471;
+    width: 9rem;
+    height: 2rem;
+    /* text-align: center; */
+    border: 1px solid none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.logodas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 7rem;
+    padding: 1rem;
+    color: white;
+    /* background-color: red; */
+}
+.logodas img{
+    width: 70px;
+}
