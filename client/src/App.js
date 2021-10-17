@@ -10,6 +10,7 @@ import PrivateRoute from "./utils/privateRoute";
 import history from "./utils/history";
 import Profile from "./pages/Profile";
 import Activity from "./pages/Activity";
+import Chat from "./component/chats/chat/chat";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/activity" exact component={Activity} />
           <Route path="/general-note" exact component={GeneralNote} />
           <PrivateRoute path="/dashboard" exact component={Dashboard} />
+          <Route path="/chat" exact component={Chat} />
         </Switch>
       </Router>
     </div>

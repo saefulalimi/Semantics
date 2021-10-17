@@ -8,6 +8,9 @@ const userReducer = (state = {}, action) => {
       localStorage.clear();
       return (state = {});
 
+      case "PROCESS":
+        return { ...action.payload };
+
     default:
       return state;
   }
