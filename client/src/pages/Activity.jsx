@@ -85,7 +85,6 @@ const Activity = () => {
   };
 
   const updateNote = (id) => {
-    window.scrollTo(0, 0);
     const UpdateToBackend = notes.filter((note) => note.id === id);
     setEditNote(UpdateToBackend[0]);
   };

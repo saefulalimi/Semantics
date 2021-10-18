@@ -120,14 +120,26 @@ class userController {
   static update = async (req, res, next) => {
     try {
       const currentUser = req.currentUser;
-      const { fullName, age, website, intro } = req.body;
+      const { fName, age, website, intro } = req.body;
 
-      const user = await user.findOne({ _id: currentUser._id });
+      const findUser = await user.findOne({ _id: currentUser._id });
 
-      if (!user) {
+      if (!findUser) {
         next({ code: 404, message: "User not found" });
         return;
       }
+
+      const update = await user.updateOne(
+        { _id: currentUser._id },
+        {
+          $set: { fullName: fName, age: age, website: website, intro: intro },
+        }
+      );
+
+      const newUserWithNewData = await user.findOne({ _id: currentUser._id });
+      res.status(200).json({
+        data: newUserWithNewData,
+      });
     } catch (error) {
       next(error);
     }

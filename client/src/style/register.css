@@ -95,10 +95,25 @@
 .btnReg:hover{
     color: white;
 }
+@media (min-width: 375px) {
+    .wraperReg{
+        width: 80%;
+    }
+}
 
+@media (min-width: 640px) {
+    .wraperReg{
+        width: 55%;
+    }
+}
 
 @media (min-width: 768px) {
     .wraperReg{
         width: 55%;
+    }
+}
+@media (min-width: 1080px){
+    .wraperReg{
+        width: 33%;
     }
 }

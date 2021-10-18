@@ -41,7 +41,6 @@ user.post(
   upload.single("picture"),
   async (req, res, next) => {
     const currentUser = req.currentUser;
-    const fileName = req.file.filename;
 
     const user = await userModel.findOne({ _id: currentUser._id });
     if (!user) {
@@ -51,7 +50,7 @@ user.post(
     const avatar = await userModel.updateOne(
       { _id: currentUser._id },
       {
-        $set: { avatar: fileName },
+        $set: { avatar: req.file.filename },
       }
     );
 
