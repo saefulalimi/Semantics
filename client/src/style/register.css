@@ -1,0 +1,119 @@
+.homeReg{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+.containerReg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.wraperReg{
+    border: 1px solid none;
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: rgb(250, 250, 250);
+    width: 32%;
+    height: auto;
+}
+.boxReg{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: blue; */
+}
+.handleReg{
+    /* background-color: darkblue; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.handleReg .introReg{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.handleReg .introReg h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.logoReg{
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f78fb3;
+    border: 1px solid none;
+    border-radius: 80px;
+}
+.logoReg img{
+    width: 90%;
+    height: 80%;
+}
+.childReg{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.childBox{
+    display: flex;
+    width: 100%;
+    height: 2.5rem;
+    border: 2px solid #B53471;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.formReg{
+    /* background-color: crimson; */
+    width: 90%;
+}
+.btnReg{
+    margin-top: 5%;
+    border: 1px solid none;
+    background-color:#ED4C67;
+    width: 90%;
+    height: 2.5rem;
+    border-radius: 5px;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 3%;
+}
+
+.btnReg:hover{
+    color: white;
+}
+@media (min-width: 375px) {
+    .wraperReg{
+        width: 80%;
+    }
+}
+
+@media (min-width: 640px) {
+    .wraperReg{
+        width: 55%;
+    }
+}
+
+@media (min-width: 768px) {
+    .wraperReg{
+        width: 55%;
+    }
+}
+@media (min-width: 1080px){
+    .wraperReg{
+        width: 33%;
+    }
+}

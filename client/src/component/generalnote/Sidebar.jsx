@@ -13,7 +13,7 @@ const Sidebar = ({
   return (
     <div className="md:w-full">
       <div className="app-sidebar-header">
-        <h2>GENERAL NOTE</h2>
+        <h4>GENERAL NOTE</h4>
         <button onClick={onAddNote}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
