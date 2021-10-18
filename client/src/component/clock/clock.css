@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Orbitron:wght@500&family=Skranji&display=swap');
+
+.bodyclock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 480px;
+}
+.bodyclock1{
+    font-family: 'Skranji', cursive;
+    /* background-color: white; */
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+
+}
+.bodyclock1 h2{
+    font-weight: 400;
+    font-size: 70px;
+}
+.bodyclock2{
+    font-family: 'Orbitron', sans-serif;
+    /* background-color: green; */
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    font-size: 80px;
+}

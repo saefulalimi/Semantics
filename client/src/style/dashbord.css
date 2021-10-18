@@ -2,15 +2,10 @@
     display: flex;
     /* justify-content: center; */
 }
-
 .dashboardpar{
     width: 15%;
     height: 720px;
-    background-color: #ED4C67;
-}
-
-.pagedas{
-    width: 70%;
+    background: linear-gradient(#f19066,#f5cd79);
 }
 .navdash{
     display: flex;
@@ -21,10 +16,9 @@
     /* background-color: #ED4C67; */
     /* padding: .5rem; */
 }
-
 .childdas{
     margin: .5rem;
-    background-color: #B53471;
+    background-color: #b65683;
     width: 9rem;
     height: 2rem;
     /* text-align: center; */
@@ -34,6 +28,11 @@
     justify-content: center;
     align-items: center;
     color: white;
+    text-decoration: none;
+}
+.childdas:hover{
+    background-color: #B53471;
+    color: white;
 }
 .logodas{
     display: flex;
@@ -41,11 +40,40 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 7rem;
+    height: 10rem;
     padding: 1rem;
     color: white;
     /* background-color: red; */
 }
 .logodas img{
     width: 70px;
+}
+.btn-logout{
+    font-weight: bold;
+    color: red;
+}
+
+/* MAIN CONTENT DASBOARD  */
+.pagedas{
+    width: 100%;
+    /* background-color: lightcoral; */
+}
+.imgbck2{
+    position: absolute;
+    z-index: -1;
+}
+.imgbc2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 480px;
+}
+.imgbck2 img{
+    width: 45%;
+    opacity: 0.6;
+}
+.bodydas1{
+    display: flex;
+    justify-content: center;
 }

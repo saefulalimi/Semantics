@@ -1,25 +1,15 @@
 .bodyHome{
     width: 100%;
-    height: 760px;
+    height: auto;
     /* background-color: burlywood; */
 }
-/* ::-webkit-scrollbar {
-    width: 18px;
-    z-index: 0;
-}
-::-webkit-scrollbar-track{
-    background: aqua;
-}
-::-webkit-scroll-thumb{
-    background: blue;
-} */
 
 .wraperHome{
     display: flex;
     justify-content: center;
     flex-direction: row;
     width: 100%;
-    height: 480px;
+    height: 460px;
 }
 
 /* BODY INTRODUCING HOME PAGE */
@@ -60,10 +50,12 @@
 
 .childbody3{
     width: 100%;
-    height: 40px;
-    /* background-color: crimson; */
+    height: 10rem;
+    /* margin-bottom: 2rem; */
+    background: linear-gradient(#fff,#f7e4bd);
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: 30px;
     font-weight: 500;
     /* color: white; */
@@ -79,10 +71,10 @@
     display: flex;
     flex-direction: row;
     padding: 4rem;
-    background-color: rgb(226, 226, 226);
+    background: linear-gradient(#f7e4bd, #f7d794);
 }
 .badan1img{
-    padding: 1rem;
+    /* padding: 1rem; */
     width: 25%;
     height: auto;
     background-color: skyblue;
@@ -101,18 +93,18 @@
     justify-content: end;
     flex-direction: row;
     padding: 4rem;
-    /* background-color: rgb(255, 158, 158); */
+    background: linear-gradient( #f7d794, #f8a5c2);
 }
 .badan2main{
     border: 6px solid none;
-    background-color: white; 
+    /* background-color: white;  */
     margin-right: .5rem;
     padding: 2rem;
     width: 55%;
 }
 .badan2img{
-    padding: 1rem;
-    width: 25%;
+    /* padding: 1rem; */
+    width: 30%;
     height: auto;
     background-color: skyblue;
 }
@@ -122,13 +114,13 @@
     display: flex;
     flex-direction: row;
     padding: 4rem;
-    background-color: salmon;
+    background: linear-gradient( #f8a5c2, #c95f90);
 }
 .badan3img{
     padding: 1rem;
     width: 25%;
     height: auto;
-    background-color: skyblue;
+    /* background-color: skyblue; */
 }
 .badan3main{
     padding: 2rem;
@@ -136,6 +128,10 @@
 }
 
 /* FOOTER COLALABORATIONS */
+.collab{
+    height: 10rem;
+    background: linear-gradient( #c95f90, #B33771);
+}
 .maincolab{
     display: flex;
     justify-content: center;
@@ -146,23 +142,27 @@
     flex-direction: row;
 }
 .colabImg img{
-    width: 70px;
+    width: 100px;
 }
 .skilvul{
-    width: 100px !important;
+    width: 120px !important;
     height: 50px;
+    margin-top: 1rem;
 }
 
 /* BADAN FOOTER  */
-.footer{
+.footerhom{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 2rem;
-    background-color: #ED4C67;
-    color: rgb(241, 241, 241);
-    font-weight: 12px;
+    background-color: #B33771;
+
+}
+.fonthome{
+    color: rgb(201, 201, 201);
+    font-weight: small;
 }
 
  /* BUTTON MID  */

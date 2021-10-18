@@ -13,7 +13,14 @@ const NotesList = ({
   setEditNote,
 }) => {
   return (
-    <div className="notes-list">
+    <div className="notes-list h-full ">
+      <AddNote
+        note={note}
+        setNote={setNote}
+        editNote={editNote}
+        setEditNote={setEditNote}
+        handleAddNote={handleAddNote}
+      />
       {notes.map((note) => (
         <Note
           id={note.id}
@@ -24,13 +31,6 @@ const NotesList = ({
           updateNote={updateNote}
         />
       ))}
-      <AddNote
-        note={note}
-        setNote={setNote}
-        editNote={editNote}
-        setEditNote={setEditNote}
-        handleAddNote={handleAddNote}
-      />
     </div>
   );
 };

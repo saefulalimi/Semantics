@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../redux/action";
 import { Link, useHistory } from "react-router-dom";
+
+import Clock from '../component/clock/Clock'
+
+
+import bck2 from '../assets/bck2.png'
 import logo from '../assets/logo.png'
 import '../style/dashbord.css'
-import Clock from '../component/clock/Clock'
 
 function Dashboard() {
   const history = useHistory();
@@ -41,13 +45,24 @@ function Dashboard() {
               <Link className="childdas" to="/calendar">
                   Calendar
               </Link>
-              <button onClick={handleLogout}>Logout</button>
+              <button className="btn-logout" onClick={handleLogout}>Logout</button>
            </nav>
         </div>
         
+        
         <div className="pagedas">
-          <h2>Dashboard</h2>
-          <h1><Clock/></h1>
+          <div className="bodydas1">
+            <h5>Dashboard Semantics Apps</h5>
+            
+          </div>
+          <div className="imgbck2">
+            <div className="imgbc2">
+            <img src={bck2}/>
+              </div> 
+          </div>
+          <div className="clockdas">
+            <Clock/>
+            </div>
         </div>
 
       </div>

@@ -85,24 +85,13 @@ const Activity = () => {
   };
 
   const updateNote = (id) => {
+    window.scrollTo(0, 0);
     const UpdateToBackend = notes.filter((note) => note.id === id);
-    console.log("data yang mau di update", UpdateToBackend[0]);
     setEditNote(UpdateToBackend[0]);
-    // const data = {
-    //   token,
-    //   data: UpdateToBackend[0],
-    // };
-
-    // async function UpdateNote() {
-    //   await dispatch(action.updateNote(data));
-    //   const latest = JSON.parse(localStorage.getItem("subject"));
-    //   setNotes(latest);
-    // }
-    // UpdateNote();
   };
 
   return (
-    <div className={`${darkMode && "dark-mode"}`}>
+    <div className={`w-full h-auto ${darkMode && "dark-mode"}`}>
       <div className="container">
         <Header handleToggleDarkMode={setDarkMode} />
         <Search handleSearchNote={setSearchText} />

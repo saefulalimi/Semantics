@@ -6,6 +6,10 @@ import Bck1 from '../assets/bck1.png'
 import { Link } from "react-router-dom";
 import skilvul from '../assets/skilvul.png'
 import impact from '../assets/impactbyte.png'
+import activty from '../assets/activity.png'
+import general from '../assets/general.png'
+import general1 from '../assets/general1.png'
+
 
 
 function HomePage() {
@@ -29,16 +33,16 @@ function HomePage() {
       </div>
 
       <div className="childbody3">
-            <h2>What do we get in semantics?</h2>
+            <h3>What do we get in semantics?</h3>
           </div>
 
           <div clasName="childbody4">
                 <div className="badan1">
                   <div className="badan1img">
-                    <img src={impact}/>
+                    <img src={activty}/>
                   </div>
                   <div className="badan1main">
-                    <h3>TITLE</h3>
+                    <h3>Activty here For You!</h3>
                     <p>you can save important short notes such as phone numbers, 
                       home addresses or if you are a student you can keep notes 
                       in the form of homework, daily activities or others you can 
@@ -52,11 +56,12 @@ function HomePage() {
                 
                 <div className="badan2">
                   <div className="badan2main">
-                    <h3>TITLE</h3>
-                    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum impedit ipsum rerum molestiae architecto sequi ipsam aliquam voluptatum, deleniti a.</span>
+                    <h3>General notes available</h3>
+                    <p>we present general notes for those of you who want to copy a text and want to take the essence of your text, general notes will make your work easier.</p>
                   </div>
                   <div className="badan2img">
-                    <img src={impact}/>
+                    <img src={general}/>
+                    <img src={general1}/>
                   </div>
                 </div>
 
@@ -81,8 +86,8 @@ function HomePage() {
             </div>
         </div>
 
-        <div className="footer">
-          <h6>Copyright © 2021 Semantics. All Rights Reserved.</h6>
+        <div className="footerhom">
+          <p className="fonthome">Copyright © 2021 Semantics. All Rights Reserved.</p>
         </div>
     </div>
     {console.log(data)}

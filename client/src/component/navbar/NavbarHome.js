@@ -7,7 +7,7 @@ function NavigateHome() {
       <div>
         <div className="">
         <nav className="navbar navbar-light bg-light">
-          <a className="navbar-brand flex " href="#">
+          <a className="navbar-brand flex ml-3" href="#">
             <img src={Logo} width="30" height="30" class="d-inline-block align-top" alt="" className="mr-2"/>
             Semantics
           </a>
