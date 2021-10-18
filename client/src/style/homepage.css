@@ -63,10 +63,7 @@
 
 /* BODY INTRODUCING SNEAK PEAK PART 2 HOME PAGE */
 /* BADAN1 */
-.childbody4{
-    color: darkcyan;
-    
-}
+
 .badan1{
     display: flex;
     flex-direction: row;
@@ -106,7 +103,7 @@
     /* padding: 1rem; */
     width: 30%;
     height: auto;
-    background-color: skyblue;
+    /* background-color: skyblue; */
 }
 
 /* BADAN3 */
@@ -170,4 +167,108 @@
     display: flex;
     justify-content: center;
     
+}
+
+/* BATAS RESPONSIVE */
+@media (max-width: 375px) {
+    .childbody2{
+        display: none;
+    }
+    .childbody1{
+        width: 100%;
+    }
+    .childbody1 h1{
+        font-size: 40px;
+    }
+    .badan1{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 2rem;
+        /* background-color: blueviolet; */
+    }
+    .badan1img{
+        display: flex;
+        justify-content: center;
+        width: 310px;
+    }
+    .badan1main{
+        margin-top: 1rem;
+        width: 100%;
+        padding: 0;
+    }
+    .badan2{
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        width: 100%;
+    }
+    .badan2main{
+        width: 100%;
+        padding: 0;
+    }
+    .badan2img{
+        width: 310px;
+    }
+    .badan3{
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+    }
+    .badan3img{
+        width: 310px;
+        padding: 0;
+    }
+    .badan3main{
+        margin-top: 1rem;
+        padding: 0;
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) { 
+    .childbody1{
+        width: 60%;
+        z-index: 1;
+    }
+    .childbody2{
+        display: flex;
+        align-items: center;
+        width: 50%;
+        float: right;
+        padding: 0;
+    }
+    .childbody3{
+        margin-top: 10rem;
+        height: 8rem;
+    }
+    .badan1main{
+        width: 100%;
+        padding: 1rem;
+        font-size: 20px
+    }
+    .badan2main{
+        width: 100%;
+        padding: 1rem;
+        font-size: 20px
+    }
+    .badan3main{
+        width: 100%;
+        padding: 1rem;
+        font-size: 20px
+    }
+    .badan1img{
+        width: 350px;
+    }
+    .badan2img{
+        width: 350px;
+        padding: 1rem;
+    }
+    .badan3img{
+        width: 350px;
+        padding: 1rem;
+    }
+}
+@media (min-width: 1024px) {
+
 }

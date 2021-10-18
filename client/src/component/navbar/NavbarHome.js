@@ -5,10 +5,9 @@ import Logo from '../../assets/logo.png'
 function NavigateHome() {
     return (
       <div>
-        <div className="">
-        <nav className="navbar navbar-light bg-light">
-          <a className="navbar-brand flex ml-3" href="#">
-            <img src={Logo} width="30" height="30" class="d-inline-block align-top" alt="" className="mr-2"/>
+        <nav class="navbar navbar-light bg-light">
+          <a class="navbar-brand ms-5 fw-bold" href="#">
+            <img src={Logo} width="30" height="30" class="d-inline-block align-top" alt=""/>
             Semantics
           </a>
           <ul className="nav justify-content-end">
@@ -22,10 +21,11 @@ function NavigateHome() {
                   Log-In
                   </Link>
               </li>
-          </ul>
-        </nav>         
+          </ul>        
+        </nav>
+
+        
         </div>
-      </div>
     );
   }
   

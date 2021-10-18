@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../redux/action";
 import { Link, useHistory } from "react-router-dom";
+import { FiUsers } from "react-icons/fi";
+import { BiNotepad, BiNote, BiCalendarPlus} from "react-icons/bi";
 
 import Clock from '../component/clock/Clock'
+import Modal from '../component/modal/Modal'
 
 
 import bck2 from '../assets/bck2.png'
@@ -25,7 +28,7 @@ function Dashboard() {
   };
 
   return (
-    <div>
+    <div className="bodydashboard">
       <div className="dashboardapp">
         <div className="dashboardpar">
             <div className="logodas">
@@ -34,27 +37,30 @@ function Dashboard() {
             </div>
           <nav className="navdash">
             <Link className="childdas" to="/profile">
-                 Profile
+                 <FiUsers className="iconedas"/> Profile
               </Link>
               <Link className="childdas" to="/activity">
-                  Activity
+                  <BiNotepad className="iconedas"/>Activity
               </Link>
               <Link className="childdas" to="/general-note">
-                  General Note
+                  <BiNote className="iconedas"/>General Note
               </Link>
               <Link className="childdas" to="/calendar">
-                  Calendar
+                  <BiCalendarPlus className="iconedas"/>Calendar
               </Link>
-              <button className="btn-logout" onClick={handleLogout}>Logout</button>
+              
            </nav>
         </div>
         
         
         <div className="pagedas">
-          <div className="bodydas1">
-            <h5>Dashboard Semantics Apps</h5>
-            
+          <div className="dasheade">
+            <button className="btn-logout" onClick={handleLogout}>Logout</button>
+            <Modal/>
           </div>
+          {/* <div className="bodydas1">
+            <h5>Dashboard Semantics Apps</h5>
+          </div> */}
           <div className="imgbck2">
             <div className="imgbc2">
             <img src={bck2}/>

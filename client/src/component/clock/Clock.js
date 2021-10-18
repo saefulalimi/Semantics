@@ -18,7 +18,7 @@ function Clock() {
   <div className="bodyclock">
     <div className="bodyclock2" >{clockState}</div>;
     <div className="bodyclock1">
-       {hour>=12 ? hour>=16 ? <h2>Good Evening</h2> : <h2>Good Afternoon</h2> : <h2>Good Morning</h2>}
+       {hour>=10 ? hour>=16 ? <h2>Good Evening</h2> : <h2>Good Afternoon</h2> : <h2>Good Morning</h2>}
     </div>
     </div>
   )

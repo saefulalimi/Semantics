@@ -1,11 +1,14 @@
+.bodydashboard{
+    overflow: hidden;
+}
 .dashboardapp{
     display: flex;
-    /* justify-content: center; */
 }
 .dashboardpar{
     width: 15%;
     height: 720px;
-    background: linear-gradient(#f19066,#f5cd79);
+    background: linear-gradient(#0a3d62, #60a3bc);
+    /* background-color: #0a3d62; */
 }
 .navdash{
     display: flex;
@@ -16,16 +19,21 @@
     /* background-color: #ED4C67; */
     /* padding: .5rem; */
 }
+.iconedas{
+    margin-right: 5px;
+}
 .childdas{
+    
     margin: .5rem;
-    background-color: #b65683;
+    background-color: #0a3d62;
     width: 9rem;
     height: 2rem;
     /* text-align: center; */
     border: 1px solid none;
     border-radius: 5px;
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    padding-left: .5rem;
     align-items: center;
     color: white;
     text-decoration: none;
@@ -50,12 +58,18 @@
 }
 .btn-logout{
     font-weight: bold;
-    color: red;
+    color: rgb(0, 0, 0);
+    background-color:  rgb(255, 255, 255);
+    height: 2rem;
+    width: 4rem;
+    border: 1px solid none;
+    border-radius: 5px;
 }
 
 /* MAIN CONTENT DASBOARD  */
 .pagedas{
     width: 100%;
+    
     /* background-color: lightcoral; */
 }
 .imgbck2{
@@ -73,7 +87,22 @@
     width: 45%;
     opacity: 0.6;
 }
+.dasheade{
+    display: flex;
+    justify-content: end;
+    padding: .5rem;
+    height: auto;
+    /* background: linear-gradient(#f19066,#f5cd79); */
+    background: linear-gradient(to right, #0a3d62 , #60a3bc);
+    /* background-color: ; */
+}
 .bodydas1{
     display: flex;
     justify-content: center;
+    /* background-color: lightcyan; */
+}
+.bodydas1 h5{
+    font-size: 40px;
+    /* background-color: #FFC312; */
+    color: #38ada9;
 }

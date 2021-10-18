@@ -67,7 +67,7 @@ function HomePage() {
 
                 <div className="badan3">
                   <div className="badan3img">
-                    <img src={impact} alt="" srcset="" />
+                    <img src={activty} alt="" srcset="" />
                   </div>
                   <div className="badan3main">
                     <h3>TITLE</h3>
