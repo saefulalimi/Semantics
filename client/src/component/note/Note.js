@@ -34,10 +34,7 @@ const Note = ({ id, text, date, handleDeleteNote, updateNote }) => {
             <small className="font-semibold">{date}</small>
             <span className="flex flex-row opacity-100 md:opacity-0 md:hover:opacity-100 transition ease-in-out duration-100">
               <BsVectorPen
-                onClick={() => {
-                  window.scrollTo(0, 0);
-                  updateNote(id);
-                }}
+                onClick={() => updateNote(id)}
                 className="edit-icon"
                 size="1.3em"
               />
@@ -53,11 +50,11 @@ const Note = ({ id, text, date, handleDeleteNote, updateNote }) => {
                 size="1.3em"
               />
               <BiNotepad
-                className="delete-icon text-blue-500 animate-pulse transition duration-400"
+                className="delete-icon text-blue-500 animate-pulse transition duration-800"
                 size="1.3em"
               />
               <MdNotificationImportant
-                className="delete-icon text-red-500 animate-pulse transition duration-800"
+                className="delete-icon text-red-500 animate-pulse transition duration-300"
                 size="1.3em"
               />
             </div>

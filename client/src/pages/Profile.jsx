@@ -1,127 +1,70 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { updateUser } from "../redux/action";
-import { Link } from "react-router-dom";
-
-import axios from "../utils/axios";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import FormUpdate from "../component/form/FormUpdate";
 
 function Profile() {
-  const [fullname, setFullname] = useState("");
-  const [age, setAge] = useState(null);
-  const [website, setWebsite] = useState("");
-  const [intro, setIntro] = useState("");
   const [image, setImage] = useState("https://fakeimg.pl/350x300/");
-  const [saveImage, setSaveImage] = useState(null);
-  const token = localStorage.getItem("token");
-  const dispatch = useDispatch();
+  // const [saveImage, setSaveImage] = useState(null);
+  const [dataUser, setDataUser] = useState({});
+  const [img, setImg] = useState("");
+  const [currentPicture, setCurrentPicture] = useState("");
+  const [status, setStatus] = useState(false);
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  // const token = localStorage.getItem("token");
 
-  const handleUploadChange = async (e) => {
-    if (image === "https://fakeimg.pl/350x300/") {
-      console.log("handlle change jalan");
-      console.log(e.target.files[0]);
-      const uploaded = e.target.files[0];
-      setImage(URL.createObjectURL(uploaded));
-      setSaveImage(uploaded);
-    } else {
-      return Error("You Can't Upload More Than 1 Picture");
+  useEffect(() => {
+    if (status) {
+      setDataUser(JSON.parse(localStorage.getItem("userinfo")));
+      setCurrentPicture(JSON.parse(localStorage.getItem("img")));
+
+      setImg(JSON.parse(localStorage.getItem("img")));
+      setStatus(false);
     }
-  };
+  }, [status]);
 
-  async function storeImage() {
-    if (!saveImage) {
-      alert("upload gambar dulu");
-    }
-
-    let formData = new FormData();
-    formData.append("picture", saveImage);
-
-    try {
-      await axios
-        .post("/users/upload", formData, {
-          headers: { "Content-Type": "multipart/form-data", token: token },
-        })
-        .then((res) => {
-          console.log("ini Response", res);
-          const gambar = res.data.image;
-
-          setImage(gambar);
-          setSaveImage(null);
-        });
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  const handleUpdate = async (e) => {
-    e.preventDefault();
-    const data = {
-      token: token,
-      fullName: fullname,
-      age: age,
-      website: website,
-      intro: intro,
-    };
-    console.log(data);
-    const response = await dispatch(updateUser(data));
-    console.log(response);
-  };
+  useEffect(() => {
+    setDataUser(JSON.parse(localStorage.getItem("userinfo")));
+    setImg(JSON.parse(localStorage.getItem("img")));
+  }, []);
 
   return (
-    <div>
+    <div className="md:w-screen md:h-screen">
       <div>
         <div className="overflow-y-auto grid grid-cols-1 md:grid-cols-2 h-screen">
           <div className="md:max-h-96 md:h-screen">
             <img
               className="bg-auto bg-no-repeat bg-center h-full md:w-screen md:h-screen object-cover object-top"
               src="https://images.pexels.com/photos/270373/pexels-photo-270373.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt
+              alt="gambar"
             />
           </div>
-          <div className="flex bg-gray-100 md:p-10">
+          <div className="flex bg-gray-100 md:p-10 md:w-full lg:w-full md:flex-1 lg:flex-1 ">
             <div className="p-3 bg-white shadow-lg rounded-lg my-20">
               <div className="flex justify-center md:justify-end -mt-16">
                 <img
                   className="w-24 h-24 object-cover rounded-full border-2 border-indigo-500"
-                  src={image}
+                  src={img !== currentPicture ? img : currentPicture || image}
                   alt="profile"
                 />
               </div>
               <div className="md:flex md:flex-col md:justify-between">
                 <h2 className="text-xl pt-3 text-gray-800 md:text-3xl font-semibold">
-                  Human
+                  {dataUser ? dataUser.fullName : "User"}
                 </h2>
                 <p className="my-5 overflow-auto md:my-8 text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
+                  {dataUser
+                    ? dataUser.intro
+                    : `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
                   dolores deserunt ea doloremque natus error, rerum quas odio
                   quaerat nam ex commodi hic, suscipit in a veritatis pariatur
-                  minus consequuntur!
+                  minus consequuntur!`}
                 </p>
               </div>
-              <div className="text-sm font-medium text-indigo-500 my-5">
-                <input
-                  type="file"
-                  id="formFile"
-                  accept="image/*"
-                  onChange={handleUploadChange}
-                />
-                <button
-                  className="md:hover:text-blue-500 md:text-black"
-                  onClick={storeImage}
-                  size="small"
-                  color="primary"
-                >
-                  Update
-                </button>
-              </div>
+              <button>Update</button>
             </div>
           </div>
         </div>
       </div>
+      <FormUpdate className="absolute" setStatus={setStatus} />
     </div>
   );
 }
