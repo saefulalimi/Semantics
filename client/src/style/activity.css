@@ -91,7 +91,6 @@ textarea:focus {
 .search {
   display: flex;
   align-items: center;
-  background-color: rgb(233, 233, 233);
   border-radius: 10px;
   padding: 5px;
   margin-bottom: 1.5em;
@@ -99,7 +98,6 @@ textarea:focus {
 
 .search input {
   border: none;
-  background-color: rgb(233, 233, 233);
   width: 100%;
 }
 

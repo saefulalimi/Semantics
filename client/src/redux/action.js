@@ -111,16 +111,3 @@ export const uploadImage = (picture) => {
       });
   };
 };
-
-//stuck
-export const updateUser = (data) => {
-  return (async) => {
-    return Axios.post("http://localhost:8888/users/update", data)
-      .then(() => {
-        console.log("updating sucess");
-      })
-      .then((err) => {
-        console.log(err);
-      });
-  };
-};
