@@ -1,108 +1,107 @@
-.bodydashboard{
-    overflow: hidden;
+.bodydashboard {
+  overflow: hidden;
 }
-.dashboardapp{
-    display: flex;
+.dashboardapp {
+  display: flex;
 }
-.dashboardpar{
-    width: 15%;
-    height: 720px;
-    background: linear-gradient(#0a3d62, #60a3bc);
-    /* background-color: #0a3d62; */
+.dashboardpar {
+  width: 15%;
+  height: 720px;
+  background: linear-gradient(#0a3d62, #60a3bc);
+  /* background-color: #0a3d62; */
 }
-.navdash{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: column;
-    margin: 5px;
-    /* background-color: #ED4C67; */
-    /* padding: .5rem; */
+.navdash {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin: 5px;
+  /* background-color: #ED4C67; */
+  /* padding: .5rem; */
 }
-.iconedas{
-    margin-right: 5px;
+.iconedas {
+  margin-right: 5px;
 }
-.childdas{
-    
-    margin: .5rem;
-    background-color: #0a3d62;
-    width: 9rem;
-    height: 2rem;
-    /* text-align: center; */
-    border: 1px solid none;
-    border-radius: 5px;
-    display: flex;
-    justify-content: start;
-    padding-left: .5rem;
-    align-items: center;
-    color: white;
-    text-decoration: none;
+.childdas {
+  margin: 0.5rem;
+  background-color: #0a3d62;
+  width: 9rem;
+  height: 2rem;
+  /* text-align: center; */
+  border: 1px solid none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 0.5rem;
+  align-items: center;
+  color: white;
+  text-decoration: none;
 }
-.childdas:hover{
-    background-color: #B53471;
-    color: white;
+.childdas:hover {
+  background-color: #b53471;
+  color: white;
 }
-.logodas{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 10rem;
-    padding: 1rem;
-    color: white;
-    /* background-color: red; */
+.logodas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 10rem;
+  padding: 1rem;
+  color: white;
+  /* background-color: red; */
 }
-.logodas img{
-    width: 70px;
+.logodas img {
+  width: 70px;
 }
-.btn-logout{
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-    background-color:  rgb(255, 255, 255);
-    height: 2rem;
-    width: 4rem;
-    border: 1px solid none;
-    border-radius: 5px;
+.btn-logout {
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  height: 2rem;
+  width: 4rem;
+  border: 1px solid none;
+  border-radius: 5px;
 }
 
 /* MAIN CONTENT DASBOARD  */
-.pagedas{
-    width: 100%;
-    
-    /* background-color: lightcoral; */
+.pagedas {
+  width: 100%;
+
+  /* background-color: lightcoral; */
 }
-.imgbck2{
-    position: absolute;
-    z-index: -1;
+.imgbck2 {
+  position: absolute;
+  z-index: -1;
 }
-.imgbc2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 480px;
+.imgbc2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 480px;
 }
-.imgbck2 img{
-    width: 45%;
-    opacity: 0.6;
+.imgbck2 img {
+  width: 45%;
+  opacity: 0.6;
 }
-.dasheade{
-    display: flex;
-    justify-content: end;
-    padding: .5rem;
-    height: auto;
-    /* background: linear-gradient(#f19066,#f5cd79); */
-    background: linear-gradient(to right, #0a3d62 , #60a3bc);
-    /* background-color: ; */
+.dasheade {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem;
+  height: auto;
+  /* background: linear-gradient(#f19066,#f5cd79); */
+  background: linear-gradient(to right, #0a3d62, #60a3bc);
+  /* background-color: ; */
 }
-.bodydas1{
-    display: flex;
-    justify-content: center;
-    /* background-color: lightcyan; */
+.bodydas1 {
+  display: flex;
+  justify-content: center;
+  /* background-color: lightcyan; */
 }
-.bodydas1 h5{
-    font-size: 40px;
-    /* background-color: #FFC312; */
-    color: #38ada9;
+.bodydas1 h5 {
+  font-size: 40px;
+  /* background-color: #FFC312; */
+  color: #38ada9;
 }
