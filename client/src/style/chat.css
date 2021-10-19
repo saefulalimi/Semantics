@@ -37,12 +37,6 @@ body {
   background-size: cover;
 }
 
-.book-login{
-  background: url("");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .chat-window {
   width: 300px;
   height: 420px;
@@ -184,7 +178,7 @@ body {
 } 
 
 /* At the top level of your code */
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 375px) {
   article {
     padding: 1rem 3rem;
   }
