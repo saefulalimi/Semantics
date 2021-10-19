@@ -4,6 +4,7 @@
     background-color: rgb(255, 255, 255);
 }
 .containerReg{
+    margin: 1rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,13 +43,18 @@
 }
 
 .handleReg .introReg h1{
+    /* text-align: center; */
     font-size: 30px;
     font-weight: bold;
 }
+.handleReg .introReg p{
+    font-size: 15px;
+    text-align: center;
+}
 
 .logoReg{
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,7 +103,7 @@
 }
 @media (min-width: 320px) {
     .wraperReg{
-        width: 80%;
+        width: 85%;
     }
 }
 

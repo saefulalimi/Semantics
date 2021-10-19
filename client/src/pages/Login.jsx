@@ -7,7 +7,7 @@ import '../style/register.css'
 import { Link } from "react-router-dom"
 import Logo from '../assets/logo.png'
 import { Box, TextField, Button } from "@mui/material";
-import NavigateLog from "../component/navbar/NavbarLogin"
+// import NavigateLog from "../component/navbar/NavbarLogin"
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -30,7 +30,7 @@ function Login() {
 
   return (
     <div className="homeReg">
-      <NavigateLog/>
+      {/* <NavigateLog/> */}
     <div className="containerReg">
       <div className="wraperReg">
       <Box className="boxReg" component="form" sx={{"& .MuiTextField-root": { m: 1, width: "25ch" }, }}

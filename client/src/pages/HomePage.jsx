@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import NavigateHome from "../component/navbar/NavbarHome"
+import NavBar from '../component/navbar/navbarhome/navbarhome'
 import "../style/homepage.css"
 import Bck1 from '../assets/bck1.png'
 import { Link } from "react-router-dom";
@@ -17,7 +17,7 @@ function HomePage() {
 
   return (
     <div>
-    <NavigateHome/>
+    <NavBar/>
     <div className="bodyHome">
       <div className="wraperHome">
           <div className="childbody1">

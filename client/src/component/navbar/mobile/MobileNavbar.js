@@ -18,7 +18,7 @@ function MobileNavbar() {
         <Link to="/activity"><BiNotepad className="wid" /></Link>
         </div>
       <div className="Gpchat">
-        <Link><BiChat className="wid" /></Link>
+        <Link to="/chat"><BiChat className="wid" /></Link>
         </div>
       <div className="Propf">
         <Link to="/profile"><FiUsers className="wid" /></Link>

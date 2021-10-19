@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import FormUpdate from "../component/form/FormUpdate";
+import FormUser from "../component/form/FormUser";
 
 function Profile() {
-  const [image, setImage] = useState("https://fakeimg.pl/350x300/");
   // const [saveImage, setSaveImage] = useState(null);
   const [dataUser, setDataUser] = useState({});
   const [img, setImg] = useState("");
   const [currentPicture, setCurrentPicture] = useState("");
   const [status, setStatus] = useState(false);
-  const [modalIsOpen, setIsOpen] = React.useState(false);
   // const token = localStorage.getItem("token");
 
   useEffect(() => {
@@ -28,7 +27,44 @@ function Profile() {
 
   return (
     <div className="md:w-screen md:h-screen">
-      <div>
+      <div className="wrapper bg-gray-400 antialiased text-gray-900">
+        <div>
+          <img
+            src="https://source.unsplash.com/random/350x350"
+            alt=" random imgee"
+            className="w-full object-cover object-center rounded-lg shadow-md"
+          />
+          <div className="relative px-4 -mt-16  ">
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="flex items-baseline">
+                <span className="bg-teal-200 text-teal-800 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
+                  New
+                </span>
+                <div className="ml-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
+                  2 baths • 3 rooms
+                </div>
+              </div>
+              <h4 className="mt-1 text-xl font-semibold uppercase leading-tight truncate">
+                A random Title
+              </h4>
+              <div className="mt-1">
+                $1800
+                <span className="text-gray-600 text-sm"> /wk</span>
+              </div>
+              <div className="mt-4">
+                <span className="text-teal-600 text-md font-semibold">
+                  4/5 ratings{" "}
+                </span>
+                <span className="text-sm text-gray-600">
+                  (based on 234 ratings)
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <div>
         <div className="overflow-y-auto grid grid-cols-1 md:grid-cols-2 h-screen">
           <div className="md:max-h-96 md:h-screen">
             <img
@@ -63,8 +99,9 @@ function Profile() {
             </div>
           </div>
         </div>
-      </div>
-      <FormUpdate className="absolute" setStatus={setStatus} />
+      </div> */}
+      {/* <FormUpdate className="absolute" setStatus={setStatus} /> */}
+      <FormUser setStatus={setStatus} />
     </div>
   );
 }

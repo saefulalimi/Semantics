@@ -7,7 +7,7 @@ import { Box, TextField, Button } from "@mui/material";
 import '../style/register.css';
 import { Link } from "react-router-dom"
 import { register } from "../redux/action";
-import NavigateReg from "../component/navbar/NavbarReg.js"
+// import NavigateReg from "../component/navbar/NavbarReg.js"
 
 function Register() {
   const history = useHistory();
@@ -31,7 +31,7 @@ function Register() {
 
   return (
     <div className="homeReg">
-    <NavigateReg/>
+    {/* <NavigateReg/> */}
     <div className="containerReg">
       <div className="wraperReg">
         <Box className="boxReg" component="form" sx={{

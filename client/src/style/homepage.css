@@ -1,274 +1,270 @@
-.bodyHome{
-    width: 100%;
-    height: auto;
-    /* background-color: burlywood; */
+.bodyHome {
+  width: 100%;
+  height: auto;
+  /* background-color: burlywood; */
 }
 
-.wraperHome{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    width: 100%;
-    height: 460px;
+.wraperHome {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  height: 460px;
 }
 
 /* BODY INTRODUCING HOME PAGE */
 
-.childbody1{
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    width: 50%;
+.childbody1 {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 50%;
 }
-.childbody1 h1{
-    font-size: 50px;
-
+.childbody1 h1 {
+  font-size: 50px;
 }
 .childbody1 span {
-    margin-top: 1rem;
-    font-size: 20px;
+  margin-top: 1rem;
+  font-size: 20px;
 }
-.childbody2{
-    width: 50%;
-    padding: 2rem;
+.childbody2 {
+  width: 50%;
+  padding: 2rem;
 }
-.childbody2 img{
-    width: 100%;
+.childbody2 img {
+  width: 100%;
 }
-.btnHome{
-    margin-top: 3rem;
-    border: 1px solid none;
-    background-color: #ED4C67;
-    width: 120px;
-    height: 40px;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
+.btnHome {
+  margin-top: 3rem;
+  border: 1px solid none;
+  background-color: #ed4c67;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
 }
 
 /* BODY INTRODUCING SNEAK PEAK PART 1 HOME PAGE */
 
-.childbody3{
-    width: 100%;
-    height: 10rem;
-    /* margin-bottom: 2rem; */
-    background: linear-gradient(#fff,#f7e4bd);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    font-weight: 500;
-    /* color: white; */
+.childbody3 {
+  width: 100%;
+  height: 10rem;
+  /* margin-bottom: 2rem; */
+  background: linear-gradient(#fff, #f7e4bd);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 500;
+  /* color: white; */
 }
 
 /* BODY INTRODUCING SNEAK PEAK PART 2 HOME PAGE */
 /* BADAN1 */
 
-.badan1{
-    display: flex;
-    flex-direction: row;
-    padding: 4rem;
-    background: linear-gradient(#f7e4bd, #f7d794);
+.badan1 {
+  display: flex;
+  flex-direction: row;
+  padding: 4rem;
+  background: linear-gradient(#f7e4bd, #f7d794);
 }
-.badan1img{
-    /* padding: 1rem; */
-    width: 25%;
-    height: auto;
-    background-color: skyblue;
+.badan1img {
+  /* padding: 1rem; */
+  width: 25%;
+  height: auto;
+  background-color: skyblue;
 }
-.badan1main{
-    padding: 2rem;
-    width: 40%;
+.badan1main {
+  padding: 2rem;
+  width: 40%;
 }
-.badan1 .badan1main p{
-    font-weight: 50px;
+.badan1 .badan1main p {
+  font-weight: 50px;
 }
 
 /* BADAN2 */
-.badan2{
-    display: flex;
-    justify-content: end;
-    flex-direction: row;
-    padding: 4rem;
-    background: linear-gradient( #f7d794, #f8a5c2);
+.badan2 {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  padding: 4rem;
+  background: linear-gradient(#f7d794, #f8a5c2);
 }
-.badan2main{
-    border: 6px solid none;
-    /* background-color: white;  */
-    margin-right: .5rem;
-    padding: 2rem;
-    width: 55%;
+.badan2main {
+  border: 6px solid none;
+  /* background-color: white;  */
+  margin-right: 0.5rem;
+  padding: 2rem;
+  width: 55%;
 }
-.badan2img{
-    /* padding: 1rem; */
-    width: 30%;
-    height: auto;
-    /* background-color: skyblue; */
+.badan2img {
+  /* padding: 1rem; */
+  width: 30%;
+  height: auto;
+  /* background-color: skyblue; */
 }
 
 /* BADAN3 */
-.badan3{
-    display: flex;
-    flex-direction: row;
-    padding: 4rem;
-    background: linear-gradient( #f8a5c2, #c95f90);
+.badan3 {
+  display: flex;
+  flex-direction: row;
+  padding: 4rem;
+  background: linear-gradient(#f8a5c2, #c95f90);
 }
-.badan3img{
-    padding: 1rem;
-    width: 25%;
-    height: auto;
-    /* background-color: skyblue; */
+.badan3img {
+  padding: 1rem;
+  width: 25%;
+  height: auto;
+  /* background-color: skyblue; */
 }
-.badan3main{
-    padding: 2rem;
-    width: 40%;
+.badan3main {
+  padding: 2rem;
+  width: 40%;
 }
 
 /* FOOTER COLALABORATIONS */
-.collab{
-    height: 10rem;
-    background: linear-gradient( #c95f90, #B33771);
+.collab {
+  height: 10rem;
+  background: linear-gradient(#c95f90, #b33771);
 }
-.maincolab{
-    display: flex;
-    justify-content: center;
+.maincolab {
+  display: flex;
+  justify-content: center;
 }
-.colabImg{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+.colabImg {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
-.colabImg img{
-    width: 100px;
+.colabImg img {
+  width: 100px;
 }
-.skilvul{
-    width: 120px !important;
-    height: 50px;
-    margin-top: 1rem;
+.skilvul {
+  width: 120px !important;
+  height: 50px;
+  margin-top: 1rem;
 }
 
 /* BADAN FOOTER  */
-.footerhom{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 2rem;
-    background-color: #B33771;
-
+.footerhom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 2rem;
+  background-color: #b33771;
 }
-.fonthome{
-    color: rgb(201, 201, 201);
-    font-weight: small;
+.fonthome {
+  color: rgb(201, 201, 201);
+  font-weight: small;
 }
 
- /* BUTTON MID  */
-.btnMid{
-    display: flex;
-    justify-content: center;
-    
+/* BUTTON MID  */
+.btnMid {
+  display: flex;
+  justify-content: center;
 }
 
 /* BATAS RESPONSIVE */
 @media (max-width: 375px) {
-    .childbody2{
-        display: none;
-    }
-    .childbody1{
-        width: 100%;
-    }
-    .childbody1 h1{
-        font-size: 40px;
-    }
-    .badan1{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        padding: 2rem;
-        /* background-color: blueviolet; */
-    }
-    .badan1img{
-        display: flex;
-        justify-content: center;
-        width: 310px;
-    }
-    .badan1main{
-        margin-top: 1rem;
-        width: 100%;
-        padding: 0;
-    }
-    .badan2{
-        display: flex;
-        flex-direction: column;
-        padding: 2rem;
-        width: 100%;
-    }
-    .badan2main{
-        width: 100%;
-        padding: 0;
-    }
-    .badan2img{
-        width: 310px;
-    }
-    .badan3{
-        display: flex;
-        flex-direction: column;
-        padding: 2rem;
-    }
-    .badan3img{
-        width: 310px;
-        padding: 0;
-    }
-    .badan3main{
-        margin-top: 1rem;
-        padding: 0;
-        width: 100%;
-    }
+  .childbody2 {
+    display: none;
+  }
+  .childbody1 {
+    width: 100%;
+  }
+  .childbody1 h1 {
+    font-size: 40px;
+  }
+  .badan1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+    /* background-color: blueviolet; */
+  }
+  .badan1img {
+    display: flex;
+    justify-content: center;
+    width: 310px;
+  }
+  .badan1main {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0;
+  }
+  .badan2 {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    width: 100%;
+  }
+  .badan2main {
+    width: 100%;
+    padding: 0;
+  }
+  .badan2img {
+    width: 310px;
+  }
+  .badan3 {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .badan3img {
+    width: 310px;
+    padding: 0;
+  }
+  .badan3main {
+    margin-top: 1rem;
+    padding: 0;
+    width: 100%;
+  }
 }
 
-@media (min-width: 768px) { 
-    .childbody1{
-        width: 60%;
-        z-index: 1;
-    }
-    .childbody2{
-        display: flex;
-        align-items: center;
-        width: 50%;
-        float: right;
-        padding: 0;
-    }
-    .childbody3{
-        margin-top: 10rem;
-        height: 8rem;
-    }
-    .badan1main{
-        width: 100%;
-        padding: 1rem;
-        font-size: 20px
-    }
-    .badan2main{
-        width: 100%;
-        padding: 1rem;
-        font-size: 20px
-    }
-    .badan3main{
-        width: 100%;
-        padding: 1rem;
-        font-size: 20px
-    }
-    .badan1img{
-        width: 350px;
-    }
-    .badan2img{
-        width: 350px;
-        padding: 1rem;
-    }
-    .badan3img{
-        width: 350px;
-        padding: 1rem;
-    }
+@media (min-width: 768px) {
+  .childbody1 {
+    width: 60%;
+    z-index: 1;
+  }
+  .childbody2 {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    float: right;
+    padding: 0;
+  }
+  .childbody3 {
+    margin-top: 10rem;
+    height: 8rem;
+  }
+  .badan1main {
+    width: 100%;
+    padding: 1rem;
+    font-size: 20px;
+  }
+  .badan2main {
+    width: 100%;
+    padding: 1rem;
+    font-size: 20px;
+  }
+  .badan3main {
+    width: 100%;
+    padding: 1rem;
+    font-size: 20px;
+  }
+  .badan1img {
+    width: 350px;
+  }
+  .badan2img {
+    width: 350px;
+    padding: 1rem;
+  }
+  .badan3img {
+    width: 350px;
+    padding: 1rem;
+  }
 }
 @media (min-width: 1024px) {
-
 }
