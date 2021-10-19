@@ -45,7 +45,6 @@ function Profile() {
         <p className="mt-4 text-gray-500 dark:text-gray-400 lg:max-w-md">
           <span className="font-bold">{dataUser.fullName} ~ {dataUser.age}</span>.
           <p>{dataUser.intro}</p>  
-          
         </p>
         <button onClick={openModal} className="font-bold transition ease-in duration-300 bg-gray-500 px-3 py-2 rounded-md hover:bg-black hover:text-white ">Update</button>
       </div>
