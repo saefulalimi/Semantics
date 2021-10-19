@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "../../utils/axios";
 
-function FormUser({ setStatus }) {
+function FormUser({ setStatus, closeModal }) {
   const [image, setImage] = useState("https://fakeimg.pl/350x300/");
   const [saveImage, setSaveImage] = useState(null);
   const token = localStorage.getItem("token");
@@ -151,7 +151,7 @@ function FormUser({ setStatus }) {
                       />
                     </div>
 
-                    <div className="md:col-span-5">
+                    <div className="md:mt-3 md:col-span-5">
                       <label
                         className="text-sm font-medium text-gray-900 block mb-2"
                         htmlFor="user_avatar"
@@ -178,6 +178,14 @@ function FormUser({ setStatus }) {
                     </div>
 
                     <div className="md:col-span-5 text-right">
+                    <div className="inline-flex items-end">
+                        <button
+                          onClick={closeModal}
+                          className="mx-2 bg-gray-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                        >
+                          close
+                        </button>
+                      </div>
                       <div className="inline-flex items-end">
                         <button
                           onClick={storeImage}
