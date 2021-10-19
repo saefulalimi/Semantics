@@ -1,18 +1,18 @@
-.boxIcone{
-    display: flex;
-    justify-content: end;
-    width: auto;
-    padding: 4px;
-    margin-left: 1rem;
-    /* padding: 10px; */
-    /* background-color: red; */
+.boxIcone {
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+  padding: 4px;
+  margin-left: 1rem;
+  /* padding: 10px; */
+  /* background-color: red; */
 }
-.iconet{
-    width: 25px;
-    height: 25px;
-    color: #ffffff;
+.iconet {
+  width: 25px;
+  height: 25px;
+  color: #ffffff;
 }
-.iconExit{
-    width: 30px;
-    height: 30px;
+.iconExit {
+  width: 30px;
+  height: 30px;
 }
