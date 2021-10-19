@@ -54,12 +54,9 @@ function Chat() {
                                 type="text" 
                                 class="px-4 py-2 w-full rounded border border-gray-300 shadow-sm text-base placeholder-gray-500 placeholder-opacity-50 focus:outline-none focus:border-blue-500"
                             />
-                            <button onClick={joinRoom} class="flex justify-center items-center bg-yellow-700 hover:bg-yellow-300 text-Black focus:outline-none focus:ring rounded px-3 py-1">
-                                <svg class="w-5 h-5 inline"fill="none"stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
-                                </svg>
+                            <button onClick={joinRoom} class="flex justify-center items-center bg-yellow-700 hover:bg-yellow-300 text-Black focus:outline-none focus:ring rounded px-10 py-1">
                                 <p class="ml-1 text-lg">
-                                JOIN
+                                Join
                                 </p>
                             </button>
                         </form>

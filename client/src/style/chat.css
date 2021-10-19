@@ -1,3 +1,26 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  background: 	#FFF0F5;
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  -webkit-animation: color 5s ease-in 0s infinite alternate running;
+  -moz-animation: color 5s linear 0s infinite alternate running;
+  animation: color 5s linear 0s infinite alternate running;
+}
+  @keyframes color {
+    0% {background-color: #f1c40f;}
+    32% {background-color: #e74c3c;}
+    55% {background-color: #9b59b6;}
+    76% {background-color: #16a085;}
+    100% {background-color: #2ecc71;}
+}
+
+.loginchat {
+  background: url("../assets/loginchat.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 body {
   margin: 0%;
