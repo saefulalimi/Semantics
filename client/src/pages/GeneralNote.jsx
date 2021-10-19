@@ -49,7 +49,7 @@ function App() {
 
   return (
     <div className="md:flex md:flex-row md:max-h-screen">
-      <div className="md:hidden flex justify-end fixed inset-0 overflow-y-auto transition ease-in-out duration-300 mt-4 mr-2">
+      <div className="md:hidden h-[150px] absolute flex justify-end inset-0 transition ease-in-out duration-300 mt-4 mr-2">
         <ButtonActiveGN
           notes={notes}
           onAddNote={onAddNote}

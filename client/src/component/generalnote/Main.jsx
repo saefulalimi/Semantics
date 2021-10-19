@@ -2,7 +2,6 @@ import ReactMarkdown from "react-markdown";
 import React from "react";
 
 const Main = ({ activeNote, onUpdateNote }) => {
-
   const onEditField = (field, value) => {
     onUpdateNote({
       ...activeNote,
@@ -19,7 +18,7 @@ const Main = ({ activeNote, onUpdateNote }) => {
         <span className="inline-block bg-pink-300 m-3 py-2 px-3  rounded-sm">
           Preview
         </span>
-        <h1 className="uppercase align-center font-semibold tracking-wide m-2 md:m-5 md:text-2xl ">
+        <h1 className="text-xl uppercase align-center font-semibold tracking-wide m-2 md:m-5 md:text-2xl ">
           {activeNote.title}
         </h1>
         <ReactMarkdown className="markdown-preview p-2 md:p-8 bg-pink-300 rounded-md h-64 overflow-y-auto md:bg-transparent">
