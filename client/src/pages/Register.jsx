@@ -66,7 +66,7 @@ function Register() {
               onChange={(e) => setConfirPass(e.target.value)} />
             </div>
             <button className="btnReg" onClick={handleSubmit}>Register</button>
-            <span>you can have account? <Link to="/login">Login</Link></span>
+            <span>you have account? <Link to="/login" className="mengLink">Login</Link></span>
           </div>
         </Box>
       </div>

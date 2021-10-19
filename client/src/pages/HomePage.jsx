@@ -39,7 +39,7 @@ function HomePage() {
           <div clasName="childbody4">
                 <div className="badan1">
                   <div className="badan1img">
-                    <img src={activty}/>
+                    <img src={activty} alt="img-intro"/>
                   </div>
                   <div className="badan1main">
                     <h3>Activty here For You!</h3>
@@ -60,14 +60,14 @@ function HomePage() {
                     <p>we present general notes for those of you who want to copy a text and want to take the essence of your text, general notes will make your work easier.</p>
                   </div>
                   <div className="badan2img">
-                    <img src={general}/>
-                    <img src={general1}/>
+                    <img src={general} alt="img-intro"/>
+                    <img src={general1} alt="img-intro"/>
                   </div>
                 </div>
 
                 <div className="badan3">
                   <div className="badan3img">
-                    <img src={activty} alt="" srcset="" />
+                    <img src={activty} alt="img-intro" srcset="" />
                   </div>
                   <div className="badan3main">
                     <h3>TITLE</h3>

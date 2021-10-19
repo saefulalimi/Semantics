@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from "react";
-import FormUpdate from "../component/form/FormUpdate";
 import FormUser from "../component/form/FormUser";
-
 function Profile() {
   // const [saveImage, setSaveImage] = useState(null);
   const [dataUser, setDataUser] = useState({});
   const [img, setImg] = useState("");
   const [currentPicture, setCurrentPicture] = useState("");
   const [status, setStatus] = useState(false);
+  const [modal, setModal] = useState('hidden')
   // const token = localStorage.getItem("token");
+
+  const openModal = () => {
+    setModal('block')
+  }
+
+  const closeModal = () => {
+    setModal('hidden')
+  }
 
   useEffect(() => {
     if (status) {
@@ -25,83 +32,38 @@ function Profile() {
     setImg(JSON.parse(localStorage.getItem("img")));
   }, []);
 
+
+  // https://source.unsplash.com/random/350x350
   return (
-    <div className="md:w-screen md:h-screen">
-      <div className="wrapper bg-gray-400 antialiased text-gray-900">
-        <div>
-          <img
-            src="https://source.unsplash.com/random/350x350"
-            alt=" random imgee"
-            className="w-full object-cover object-center rounded-lg shadow-md"
-          />
-          <div className="relative px-4 -mt-16  ">
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <div className="flex items-baseline">
-                <span className="bg-teal-200 text-teal-800 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
-                  New
-                </span>
-                <div className="ml-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
-                  2 baths • 3 rooms
-                </div>
-              </div>
-              <h4 className="mt-1 text-xl font-semibold uppercase leading-tight truncate">
-                A random Title
-              </h4>
-              <div className="mt-1">
-                $1800
-                <span className="text-gray-600 text-sm"> /wk</span>
-              </div>
-              <div className="mt-4">
-                <span className="text-teal-600 text-md font-semibold">
-                  4/5 ratings{" "}
-                </span>
-                <span className="text-sm text-gray-600">
-                  (based on 234 ratings)
-                </span>
-              </div>
-            </div>
+
+    <div className="">
+      <section className="justify-center md:mt-32 bg-white dark:bg-gray-800">
+  <div className="container px-6 py-8 mx-auto">
+    <div className="items-center lg:flex">
+      <div className="lg:w-1/2">
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">Who I am</h2>
+        <p className="mt-4 text-gray-500 dark:text-gray-400 lg:max-w-md">
+          <span className="font-bold">{dataUser.fullName} ~ {dataUser.age}</span>.
+          <p>{dataUser.intro}</p>  
+          
+        </p>
+        <button onClick={openModal} className="font-bold transition ease-in duration-300 bg-gray-500 px-3 py-2 rounded-md hover:bg-black hover:text-white ">Update</button>
+      </div>
+      <div className="mt-8 lg:mt-0 lg:w-1/2">
+        <div className="flex items-center justify-center lg:justify-end">
+          <div className="max-w-lg">
+            <h3 className="text-2xl font-semibold">Profile Picture</h3>
+            <img className="md:hover:transform md:hover:scale-125 transition ease-in-out duration-300 object-cover object-center w-full h-64 rounded-md shadow" src={img} alt='...' />
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      {/* <div>
-        <div className="overflow-y-auto grid grid-cols-1 md:grid-cols-2 h-screen">
-          <div className="md:max-h-96 md:h-screen">
-            <img
-              className="bg-auto bg-no-repeat bg-center h-full md:w-screen md:h-screen object-cover object-top"
-              src="https://images.pexels.com/photos/270373/pexels-photo-270373.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt="gambar"
-            />
-          </div>
-          <div className="flex bg-gray-100 md:p-10 md:w-full lg:w-full md:flex-1 lg:flex-1 ">
-            <div className="p-3 bg-white shadow-lg rounded-lg my-20">
-              <div className="flex justify-center md:justify-end -mt-16">
-                <img
-                  className="w-24 h-24 object-cover rounded-full border-2 border-indigo-500"
-                  src={img !== currentPicture ? img : currentPicture || image}
-                  alt="profile"
-                />
-              </div>
-              <div className="md:flex md:flex-col md:justify-between">
-                <h2 className="text-xl pt-3 text-gray-800 md:text-3xl font-semibold">
-                  {dataUser ? dataUser.fullName : "User"}
-                </h2>
-                <p className="my-5 overflow-auto md:my-8 text-gray-600">
-                  {dataUser
-                    ? dataUser.intro
-                    : `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-                  dolores deserunt ea doloremque natus error, rerum quas odio
-                  quaerat nam ex commodi hic, suscipit in a veritatis pariatur
-                  minus consequuntur!`}
-                </p>
-              </div>
-              <button>Update</button>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/* <FormUpdate className="absolute" setStatus={setStatus} /> */}
-      <FormUser setStatus={setStatus} />
+      <div className={`${modal} fixed z-10 inset-0 overflow-y-auto transition ease-in-out duration-300 md:h-screen md:w-screen`}>
+        <FormUser closeModal={closeModal} setStatus={setStatus} />
+      </div>
     </div>
   );
 }

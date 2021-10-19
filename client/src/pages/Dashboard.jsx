@@ -37,7 +37,8 @@ function Dashboard() {
           </div>
           <nav className="navdash">
             <Link className="childdas" to="/profile">
-              <FiUsers className="iconedas" /> Profile
+              <FiUsers className="iconedas" /> 
+              Profile
             </Link>
             <Link className="childdas" to="/activity">
               <BiNotepad className="iconedas" />
@@ -55,23 +56,23 @@ function Dashboard() {
               <BiCalendarPlus className="iconedas" />
               Calendar
             </Link>
+            <button className="btn-logout" onClick={handleLogout}>Logout</button>
           </nav>
         </div>
 
         <div className="pagedas">
           <div className="dasheade">
-            <button className="btn-logout" onClick={handleLogout}>Logout</button>
+            
             <button className="btn-logout-icone" onClick={handleLogout}><BiExit className="iconeExit"/></button>
             <Modal/>
           </div>
-          {/* <img src={bck2}/> */}
           <div className="imgbck2">
-            <div className="imgbck2">
+            <div className="imgbc2">
             <img src={bck2}/>
             </div>
           </div>
           <div className="clockdas">
-            <Clock />
+            <Clock className="clcokfix" />
           </div>
         </div>
       </div>
