@@ -7,7 +7,7 @@ import '../style/register.css'
 import { Link } from "react-router-dom"
 import Logo from '../assets/logo.png'
 import { Box, TextField, Button } from "@mui/material";
-import NavigateLog from "../component/navbar/NavbarLogin"
+// import NavigateLog from "../component/navbar/NavbarLogin"
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -30,7 +30,7 @@ function Login() {
 
   return (
     <div className="homeReg">
-      <NavigateLog/>
+      {/* <NavigateLog/> */}
     <div className="containerReg">
       <div className="wraperReg">
       <Box className="boxReg" component="form" sx={{"& .MuiTextField-root": { m: 1, width: "25ch" }, }}
@@ -42,7 +42,7 @@ function Login() {
             </div>
             <div className="introReg">
               <h1>Log In</h1>
-              <p>thankyou for wanting to join semantics</p>
+              <p>Thankyou for join in Semantics</p>
             </div>
           </div>
 
@@ -54,7 +54,7 @@ function Login() {
               <input className="childBox" placeholder="  password" label="Password" type="password" autoComplete="off" onChange={(e) => setPassword(e.target.value)}/>
             </div>
             <button className="btnReg" onClick={handleSubmit}>Login</button>
-            <span>you can’t have acount?<Link to="/register"> signup</Link></span>
+            <span>create account? <Link to="/register" className="mengLink"> signup</Link></span>
         </div>
       </Box>
       </div>

@@ -1,3 +1,4 @@
+import React from 'react'
 import "../style/chat.css";
 import io from "socket.io-client";
 import { useState } from "react";

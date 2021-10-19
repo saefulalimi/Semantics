@@ -43,6 +43,7 @@ function ModalInfo() {
         </button>
       </div>
       <Modal
+      // className="ModalInfo"
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}

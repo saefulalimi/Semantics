@@ -7,7 +7,7 @@ import { Box, TextField, Button } from "@mui/material";
 import '../style/register.css';
 import { Link } from "react-router-dom"
 import { register } from "../redux/action";
-import NavigateReg from "../component/navbar/NavbarReg.js"
+// import NavigateReg from "../component/navbar/NavbarReg.js"
 
 function Register() {
   const history = useHistory();
@@ -31,7 +31,7 @@ function Register() {
 
   return (
     <div className="homeReg">
-    <NavigateReg/>
+    {/* <NavigateReg/> */}
     <div className="containerReg">
       <div className="wraperReg">
         <Box className="boxReg" component="form" sx={{
@@ -66,7 +66,7 @@ function Register() {
               onChange={(e) => setConfirPass(e.target.value)} />
             </div>
             <button className="btnReg" onClick={handleSubmit}>Register</button>
-            <span>you can have account? <Link to="/login">Login</Link></span>
+            <span>you have account? <Link to="/login" className="mengLink">Login</Link></span>
           </div>
         </Box>
       </div>

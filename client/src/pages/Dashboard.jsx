@@ -3,10 +3,11 @@ import { useDispatch } from "react-redux";
 import { logoutUser } from "../redux/action";
 import { Link, useHistory } from "react-router-dom";
 import { FiUsers } from "react-icons/fi";
-import { BiNotepad, BiNote, BiCalendarPlus } from "react-icons/bi";
+import { BiNotepad, BiNote, BiCalendarPlus, BiExit, BiChat} from "react-icons/bi";
 
-import Clock from "../component/clock/Clock";
-import Modal from "../component/modal/Modal";
+import Clock from '../component/clock/Clock'
+import Modal from '../component/modal/Modal'
+import MobileNavbar from '../component/navbar/mobile/MobileNavbar'
 
 import bck2 from "../assets/bck2.png";
 import logo from "../assets/logo.png";
@@ -31,12 +32,13 @@ function Dashboard() {
       <div className="dashboardapp">
         <div className="dashboardpar">
           <div className="logodas">
-            <img src={logo} alt="" srcset="" />
+            <img src={logo} alt=".."  />
             <h6>Semantics Apps</h6>
           </div>
           <nav className="navdash">
             <Link className="childdas" to="/profile">
-              <FiUsers className="iconedas" /> Profile
+              <FiUsers className="iconedas" /> 
+              Profile
             </Link>
             <Link className="childdas" to="/activity">
               <BiNotepad className="iconedas" />
@@ -46,32 +48,36 @@ function Dashboard() {
               <BiNote className="iconedas" />
               General Note
             </Link>
+            <Link className="childdas" to="/chat">
+              <BiChat className="iconedas" />
+              Live Chat
+            </Link>
             <Link className="childdas" to="/calendar">
               <BiCalendarPlus className="iconedas" />
               Calendar
             </Link>
+            <button className="btn-logout" onClick={handleLogout}>Logout</button>
           </nav>
         </div>
 
         <div className="pagedas">
           <div className="dasheade">
-            <button className="btn-logout" onClick={handleLogout}>
-              Logout
-            </button>
-            <Modal />
+            
+            <button className="btn-logout-icone" onClick={handleLogout}><BiExit className="iconeExit"/></button>
+            <Modal/>
           </div>
-          {/* <div className="bodydas1">
-            <h5>Dashboard Semantics Apps</h5>
-          </div> */}
           <div className="imgbck2">
             <div className="imgbc2">
-              <img src={bck2} alt=".." />
+            <img src={bck2}/>
             </div>
           </div>
           <div className="clockdas">
-            <Clock />
+            <Clock className="clcokfix" />
           </div>
         </div>
+      </div>
+      <div className="mobileNav">
+      <MobileNavbar />
       </div>
     </div>
   );
