@@ -12,6 +12,7 @@ import Profile from "./pages/Profile";
 import Activity from "./pages/Activity";
 import Calendar from "./pages/Calendar"
 
+
 function App() {
   return (
     <div className="App">

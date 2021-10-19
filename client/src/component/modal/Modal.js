@@ -42,6 +42,7 @@ function ModalInfo() {
       <button className="btn-modal" onClick={openModal}><BsFillInfoCircleFill className="iconet"/></button>
       </div>
       <Modal
+      // className="ModalInfo"
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}

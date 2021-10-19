@@ -1,5 +1,5 @@
 .bodydashboard{
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .dashboardapp{
     display: flex;
@@ -105,4 +105,52 @@
     font-size: 40px;
     /* background-color: #FFC312; */
     color: #38ada9;
+}
+.mobileNav{
+    display: none;
+}
+.btn-logout-icone{
+    display: none;
+}
+
+@media (max-width: 380px){
+    .mobileNav{
+        display: flex;
+    }
+    .dashboardapp{
+        display: flex;
+        flex-direction: column;
+    }
+    .dashboardpar{
+        display: none;
+    }
+    .navdash{
+        display: none;
+    }
+    .pagedas{
+        width: 100%;
+    }
+    .clockdas{
+        display: none;
+    }
+    .imgbck2{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    .imgbc2 img{
+        width: 80%;
+    }
+    .btn-logout-icone{
+        display: flex;
+    }
+    .btn-logout{
+        display: none;
+    }
+    .iconeExit{
+        width: 30px;
+        height: 30px;
+        color: white;
+    }
 }

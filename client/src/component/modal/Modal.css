@@ -4,8 +4,6 @@
     width: auto;
     padding: 4px;
     margin-left: 1rem;
-    /* padding: 10px; */
-    /* background-color: red; */
 }
 .iconet{
     width: 25px;
@@ -16,3 +14,6 @@
     width: 30px;
     height: 30px;
 }
+/* .ModalInfo{
+    width: 80%;
+} */

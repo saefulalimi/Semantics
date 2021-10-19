@@ -3,10 +3,11 @@ import { useDispatch } from "react-redux";
 import { logoutUser } from "../redux/action";
 import { Link, useHistory } from "react-router-dom";
 import { FiUsers } from "react-icons/fi";
-import { BiNotepad, BiNote, BiCalendarPlus} from "react-icons/bi";
+import { BiNotepad, BiNote, BiCalendarPlus, BiExit} from "react-icons/bi";
 
 import Clock from '../component/clock/Clock'
 import Modal from '../component/modal/Modal'
+import MobileNavbar from '../component/navbar/mobile/MobileNavbar'
 
 
 import bck2 from '../assets/bck2.png'
@@ -56,11 +57,9 @@ function Dashboard() {
         <div className="pagedas">
           <div className="dasheade">
             <button className="btn-logout" onClick={handleLogout}>Logout</button>
+            <button className="btn-logout-icone" onClick={handleLogout}><BiExit className="iconeExit"/></button>
             <Modal/>
           </div>
-          {/* <div className="bodydas1">
-            <h5>Dashboard Semantics Apps</h5>
-          </div> */}
           <div className="imgbck2">
             <div className="imgbc2">
             <img src={bck2}/>
@@ -71,6 +70,9 @@ function Dashboard() {
             </div>
         </div>
 
+      </div>
+      <div className="mobileNav">
+      <MobileNavbar />
       </div>
     </div>
   );

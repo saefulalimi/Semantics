@@ -95,7 +95,7 @@
 .btnReg:hover{
     color: white;
 }
-@media (min-width: 375px) {
+@media (min-width: 320px) {
     .wraperReg{
         width: 80%;
     }
