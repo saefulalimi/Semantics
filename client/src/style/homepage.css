@@ -33,6 +33,7 @@
 }
 .childbody2 img {
   width: 100%;
+  /* border-radius: 5px; */
 }
 .btnHome {
   margin-top: 3rem;
@@ -49,7 +50,7 @@
 
 .childbody3 {
   width: 100%;
-  height: 10rem;
+  height: 6rem;
   /* margin-bottom: 2rem; */
   background: linear-gradient(#fff, #f7e4bd);
   display: flex;
@@ -75,6 +76,9 @@
   height: auto;
   background-color: skyblue;
 }
+.badan1img img{
+  border-radius: 10px;
+}
 .badan1main {
   padding: 2rem;
   width: 40%;
@@ -93,16 +97,15 @@
 }
 .badan2main {
   border: 6px solid none;
-  /* background-color: white;  */
   margin-right: 0.5rem;
   padding: 2rem;
-  width: 55%;
 }
 .badan2img {
-  /* padding: 1rem; */
-  width: 30%;
+  width: 40%;
   height: auto;
-  /* background-color: skyblue; */
+}
+.badan2img img{
+  border-radius: 10px;
 }
 
 /* BADAN3 */
@@ -116,7 +119,9 @@
   padding: 1rem;
   width: 25%;
   height: auto;
-  /* background-color: skyblue; */
+}
+.badan3img img{
+  border-radius: 10px;
 }
 .badan3main {
   padding: 2rem;
