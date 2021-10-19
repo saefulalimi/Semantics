@@ -4,7 +4,6 @@ import { IoIosPricetags } from "react-icons/io";
 import { MdNotificationImportant } from "react-icons/md";
 import { BiNotepad } from "react-icons/bi";
 import { BsVectorPen } from "react-icons/bs";
-import Flippy, { FrontSide, BackSide } from "react-flippy";
 
 const Note = ({ id, text, date, handleDeleteNote, updateNote }) => {
   const borderColor = (number) => {
@@ -22,14 +21,12 @@ const Note = ({ id, text, date, handleDeleteNote, updateNote }) => {
   };
 
   return (
-    <Flippy flipOnHover={false} flipOnClick={false} flipDirection="horizontal">
-      <FrontSide id="front">
         <div
-          className={`note shadow-xl border-t-4 ${borderColor(
+          className={`note overflow-auto shadow-xl border-t-4 ${borderColor(
             Math.random() * 10
           )}`}
         >
-          <span>{text}</span>
+          <div className="overflow-auto h-[150px] break-all m-2">{text}</div>
           <div className="note-footer">
             <small className="font-semibold">{date}</small>
             <span className="flex flex-row opacity-100 md:opacity-0 md:hover:opacity-100 transition ease-in-out duration-100">
@@ -60,11 +57,7 @@ const Note = ({ id, text, date, handleDeleteNote, updateNote }) => {
             </div>
           </div>
         </div>
-      </FrontSide>
-      <BackSide id="back">
-        <h2>Haloo kawann</h2>
-      </BackSide>
-    </Flippy>
+      
   );
 };
 

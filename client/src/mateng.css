@@ -692,6 +692,10 @@ video {
   margin: 1.25rem;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
 .mx-7 {
   margin-left: 1.75rem;
   margin-right: 1.75rem;
@@ -832,6 +836,18 @@ video {
   height: 1.25rem;
 }
 
+.h-56 {
+  height: 14rem;
+}
+
+.h-44 {
+  height: 11rem;
+}
+
+.h-\[150px\] {
+  height: 150px;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -953,6 +969,14 @@ video {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.break-all {
+  word-break: break-all;
 }
 
 .rounded-lg {
@@ -1617,6 +1641,18 @@ video {
 
   .md\:gap-8 {
     gap: 2rem;
+  }
+
+  .md\:overflow-auto {
+    overflow: auto;
+  }
+
+  .md\:overflow-scroll {
+    overflow: scroll;
+  }
+
+  .md\:overflow-y-scroll {
+    overflow-y: scroll;
   }
 
   .md\:rounded-md {
