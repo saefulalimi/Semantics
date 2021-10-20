@@ -8,15 +8,13 @@ const authentication = async (req, res, next) => {
     const { token } = req.headers;
 
     if (!token) {
-      next({ code: 401, message: "required access token" });
-      return;
+      return next({ code: 401, message: "required access token" });
     }
     const jwtPayload = jwt.verify(token, process.env.SECREAT_KEY);
     const user = await userModel.findOne({ _id: jwtPayload.id });
 
     if (!user) {
-      next({ code: 404, message: "User Not Found" });
-      return;
+      return next({ code: 404, message: "User Not Found" });
     }
 
     req.currentUser = {
