@@ -12,40 +12,29 @@ body {
 }
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 
-.joinChatContainer {
-  display: flex;
-  flex-direction: column;
+
+.bg-color {
+  width: 100vw;
+  height: 100vh;
+  background: 	#FFF0F5;
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  -webkit-animation: color 5s ease-in 0s infinite alternate running;
+  -moz-animation: color 5s linear 0s infinite alternate running;
+  animation: color 5s linear 0s infinite alternate running;
+}
+  @keyframes color {
+    0% {background-color: #f1c40f;}
+    32% {background-color: #e74c3c;}
+    55% {background-color: #9b59b6;}
+    76% {background-color: #16a085;}
+    100% {background-color: #2ecc71;}
 }
 
-.joinChatContainer h3 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-.joinChatContainer input {
-  width: 210px;
-  height: 40px;
-  margin: 7px;
-  border: 2px solid #43a047;
-  border-radius: 5px;
-  padding: 5px;
-  font-size: 16px;
-}
-
-.joinChatContainer button {
-  width: 225px;
-  height: 50px;
-  margin: 7px;
-  border: none;
-  border-radius: 5px;
-  padding: 5px;
-  font-size: 16px;
-  background: #43a047;
-  color: #fff;
-  cursor: pointer;
-}
-
-.joinChatContainer button:hover {
-  background: #2e7d32;
+.loginchat {
+  background: url("../assets/loginchat.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .chat-window {
@@ -186,4 +175,20 @@ body {
 }
 .hide {
   opacity: 0 !important;
+} 
+
+/* At the top level of your code */
+@media screen and (min-width: 375px) {
+  article {
+    padding: 1rem 3rem;
+  }
+}
+
+/* Nested within another conditional at-rule */
+@supports (display: flex) {
+  @media screen and (min-width: 900px) {
+    article {
+      display: flex;
+    }
+  }
 }

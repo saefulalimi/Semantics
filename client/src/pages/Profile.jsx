@@ -18,7 +18,7 @@ function Profile() {
 
   useEffect(() => {
     if (status) {
-      setDataUser(JSON.parse(localStorage.getItem("userInfo")));
+      setDataUser(JSON.parse(localStorage.getItem("Userinfo")));
 
       console.log("ini adalah useEffect update profile", dataUser);
       setStatus(false);
@@ -26,7 +26,7 @@ function Profile() {
   }, [status, dataUser]);
 
   useEffect(() => {
-    setDataUser(JSON.parse(localStorage.getItem("userInfo")));
+    setDataUser(JSON.parse(localStorage.getItem("Userinfo")));
   }, []);
 
   // https://source.unsplash.com/random/350x350

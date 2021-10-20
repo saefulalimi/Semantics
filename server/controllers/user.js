@@ -48,28 +48,25 @@ class userController {
 
   static log = async (req, res, next) => {
     try {
+      console.log('masuk backend')
       const { email, password } = req.body;
+      console.log({email, password})
 
       if (!email) {
-        const newError = new Error();
-        newError.name = "ErrorLogin";
-        newError.message = "Invalid Email/Password";
-        throw newError;
+        next({code:400, message: 'Invalid Email/Password'})
+        return;
       }
 
       const data = await user.findOne({ email: email }).lean();
       if (!data) {
-        const newError = new Error();
-        newError.name = "ErrorLogin";
-        newError.message = "Invalid Email/Password";
-        throw newError;
+        next({code:400, message: 'Invalid Email/Password'})
+        return;
+
       }
 
       if (!bcrypt.compareSync(password, data.password)) {
-        const newError = new Error();
-        newError.name = "ErrorLogin";
-        newError.message = "Invalid Username/Password";
-        throw newError;
+        next({code:400, message: 'Invalid Email/Password'})
+        return;
       }
 
       const jwtPayload = {
@@ -78,10 +75,33 @@ class userController {
 
       const token = jwt.sign(jwtPayload, process.env.SECREAT_KEY);
 
-      res.status(200).json({
+      // const ava = 'http://'+req.hostname+':'+process.env.PORT+'/upload/'+data.avatar;
+
+      if(data.avatar === null){
+          res.status(200).json({
+          token: token,
+          dataUser: {
+            fullName: data.fullName,
+            age: data.age,
+            website: data.website,
+            intro: data.intro,
+            avatar: data.avatar,
+            activity: data.activity,
+          }
+        });
+      } else {
+        res.status(200).json({
         token: token,
-        activity: data.activity,
+        dataUser: {
+          fullName: data.fullName,
+          age: data.age,
+          website: data.website,
+          intro: data.intro,
+          avatar: 'http://'+req.hostname+':'+process.env.PORT+'/upload/'+data.avatar,
+          activity: data.activity,
+        }
       });
+      }
     } catch (error) {
       next(error);
     }

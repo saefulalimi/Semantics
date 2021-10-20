@@ -47,7 +47,7 @@ function FormUser({ setStatus, closeModal }) {
           .then((res) => {
             console.log("ini Response", res);
             const hasil = res.data.data;
-            localStorage.setItem("userInfo", JSON.stringify(hasil));
+            localStorage.setItem("Userinfo", JSON.stringify(hasil));
             setSaveImage(null);
           });
       };
