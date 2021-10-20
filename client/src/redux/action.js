@@ -13,22 +13,32 @@ export const register = (data) => {
 };
 
 export const loginUser = (data) => {
+  console.log('masuk login aksi')
   return async (dispatch) => {
     try {
       return Axios.post("/users/login", data)
         .then((res) => {
           dispatch(setToken(res.data));
           console.log(res);
-          JSON.parse(
+          
             localStorage.setItem(
               "subject",
-              JSON.stringify(res.data.activity.subject)
+              JSON.stringify(res.data.dataUser.activity.subject)
             )
-          );
-        })
-        .catch((err) => console.log(err));
+          const userinfo = {
+            avatar: res.data.dataUser.avatar,
+            fullName: res.data.dataUser.fullName,
+            age: res.data.dataUser.age,
+            website: res.data.dataUser.website,
+            intro: res.data.dataUser.intro,
+          }
+            localStorage.setItem(
+              "Userinfo",
+              JSON.stringify(userinfo)
+            )
+        }).catch((err) => console.log(err))
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
   };
 };
