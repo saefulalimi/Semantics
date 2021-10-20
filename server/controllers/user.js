@@ -10,31 +10,23 @@ class userController {
     try {
       const { userName, email, password, confir } = req.body;
       if (!userName || typeof userName !== "string") {
-        const newError = new Error();
-        newError.name = "InvalidInput";
-        newError.message = "Invalid Username";
-        throw newError;
+        next({ code: 400, message: "Invalid Input in Username" });
+        return;
       }
 
       if (!email || typeof userName !== "string") {
-        const newError = new Error();
-        newError.name = "InvalidInput";
-        newError.message = "Invalid Email";
-        throw newError;
+        next({ code: 400, message: "Invalid Input in Email" });
+        return;
       }
 
       if (password !== confir) {
-        const newError = new Error();
-        newError.name = "InvalidInput";
-        newError.message = "Password is not same";
-        throw newError;
+        next({ code: 400, message: "Invalid Input in Password" });
+        return;
       }
 
       if (password.length < 8) {
-        const newError = new Error();
-        newError.name = "InvalidInput";
-        newError.message = "Password to small, min 8 char";
-        throw newError;
+        next({ code: 400, message: "Password To Small Min 8 Char" });
+        return;
       }
 
       const hashPass = await bcrypt.hash(password, 10);
