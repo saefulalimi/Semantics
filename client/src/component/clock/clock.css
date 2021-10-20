@@ -6,7 +6,7 @@
     align-items: center;
     flex-direction: column-reverse;
     width: 100%;
-    height: auto;
+    height: 420px;
     /* margin-top: 5rem; */
     /* background-color: azure; */
     /* float: left; */
@@ -37,6 +37,8 @@
 }
 @media (max-width: 380px){
     .bodyclock{
+        position: absolute;
+        /* z-index: -1; */
         display: flex;
         justify-content: start;
         flex-direction: column-reverse;
@@ -53,3 +55,24 @@
         margin-top: -3rem;
     }
 }
+@media (max-width: 640px){
+    .bodyclock{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .bodyclock1 h2{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-size: 50px;
+    }
+    .bodyclock2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        width: 100%;
+    }
+}
+

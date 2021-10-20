@@ -67,12 +67,12 @@
 }
 .dasheade{
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     flex-direction: row;
     background: linear-gradient(to right, #0a3d62 , #60a3bc);
 }
 .dashnavrig{
-    display: flex;
+    display: none;
     flex-direction: row;
     color: white;
     padding-left: 1rem;
@@ -80,6 +80,7 @@
 .dashnavrig h6{
     margin-top: 5px;
     margin-left: .5rem;
+    font-size: 14px;
 }
 .imgbck2{
     display: flex;
@@ -97,16 +98,15 @@
 .clockdas{
     display: flex;
     position: relative;
-    z-index: 1;
+    z-index: 0;
 }
 .clockdas1{
     display: none;
 }
-
 .imgbc2{
     width: 50%;
+    opacity: 0.6;
 }
-
 .mobileNav{
     display: none;
 }
@@ -136,11 +136,14 @@
         width: 100%;
     }
     .dasheade{
+        display: flex;
+        justify-content: space-between;
         background: none;
         width: 100%;
         background-color: #0a4168 !important;
     }
     .dashnavrig{
+        display: flex;
         width: 30%;
         height: 3rem;
     }
@@ -169,7 +172,7 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 360px;
+        height: 480px;
     }
     .imgbc2{
         display: flex;
@@ -202,5 +205,38 @@
         width: 30px;
         height: 30px;
         color: white;
+    }
+}
+@media (max-width: 640px){
+    .dashboardpar{
+        width: 20%;
+    }
+    .childdas{
+        width: 6rem;
+        height: 3rem;
+        font-size: 15px;
+    }
+}
+@media (min-width: 640px){
+    .dashboardpar{
+        width: 20%;
+    }
+    .childdas{
+        width: 6rem;
+        height: 3rem;
+        font-size: 15px;
+    }
+}
+@media (min-width: 905px){
+    .dashboardpar{
+        width: 15%;
+    }
+    .childdas{
+        width: 9rem;
+        height: 2.5rem;
+    }
+    .clock1{
+        position: absolute;
+        z-index: -1;
     }
 }

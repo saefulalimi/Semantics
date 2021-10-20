@@ -72,14 +72,16 @@ function Dashboard() {
             </div>
           </div>
           <div className="clockdas1">
+            <div className="clock1">
             <Clock className="clcokfix" />
+            </div>
           </div>
           <div className="imgbck2">
             <div className="imgbc2">
             <img src={bck2}/>
             </div>
           </div>
-          <div className="clockdas">
+          <div className="clockdas ">
             <Clock className="clcokfix" />
           </div>
         </div>
