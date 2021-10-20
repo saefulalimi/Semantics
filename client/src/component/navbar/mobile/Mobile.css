@@ -1,10 +1,19 @@
+.parentMob{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* height: 6rem; */
+}
 .bodyMob{
     display: flex;
-    justify-content: center;
     flex-direction: row;
+    justify-content: center;
     width: 100%;
+    /* margin-bottom: 1rem; */
+    /* border-radius: 5px; */
     height: 3rem;
-    background-color: rgb(34, 146, 146);
+    background-color: #0a4168;
     z-index: 2;
 }
 .GenNot,
@@ -18,17 +27,22 @@
     width: 20%;
 }
 .wid{
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
+    color: white;
+}
+.wide{
+    width: 40px;
+    height: 40px;
     color: white;
 }
 .NoteMvp{
-    border: 1px solid none;
-    background-color: rgb(52, 165, 165);
-    width: 4rem;
-    height: 4rem;
+    /* border: 1px solid none; */
+    background-color: #0f5486;
+    width: 5rem;
+    height: 5rem;
     z-index: 3;
-    margin-top: -1rem;
+    margin-top: -2rem;
     border-radius: 50px;
 }
 

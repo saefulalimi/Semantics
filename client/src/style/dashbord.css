@@ -5,7 +5,7 @@
     display: flex;
     overflow-y: hidden;
     flex-direction: row;
-    background-color: #B53471;
+    /* background-color: #B53471; */
 }
 .dashboardpar{
     width: 15%;
@@ -65,24 +65,53 @@
 /* MAIN CONTENT DASBOARD  */
 .pagedas {
     width: 100%;
+    
     /* background-color: aqua; */
     /* background-color: #60a3bc; */
 }
 .dasheade{
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     flex-direction: row;
-    background-color: black;
+    background: linear-gradient(to right, #0a3d62 , #60a3bc);
+    /* background: linear-gradient(#0a3d62, #60a3bc); */
+}
+.dashnavrig{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center;
+    align-items: center; */
+    color: white;
+    padding-left: 1rem;
+}
+.dashnavrig h6{
+    margin-top: 5px;
+    margin-left: .5rem;
 }
 .imgbck2{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 80%;
     height: 512px;
-    /* position: fixed; */
-    /* z-index: 0; */
+    position: absolute;
+    /* background-color: #60a3bc; */
+    z-index: 0;
 }
+.dashnavlef{
+    display: flex;
+    flex-direction: row;
+}
+.clockdas{
+    display: flex;
+    position: relative;
+    z-index: 1;
+    /* background-color: #0a3d62; */
+}
+.clockdas1{
+    display: none;
+}
+
 .imgbc2{
     width: 50%;
 }
@@ -93,6 +122,9 @@
 .btn-logout-icone{
     display: none;
 }
+.greetdas{
+    display: none;
+}
 
 @media (max-width: 380px){
     .mobileNav{
@@ -101,6 +133,7 @@
     .dashboardapp{
         display: flex;
         flex-direction: column;
+        background-color: none;
     }
     .dashboardpar{
         display: none;
@@ -109,19 +142,62 @@
         display: none;
     }
     .pagedas{
+        /* background-color: #0a4168 !important; */
         width: 100%;
+        /* height: 2rem; */
+        /* height: 100%; */
+    }
+    .dasheade{
+        background: none;
+        width: 100%;
+        height: 2rem;
+        background-color: #0a4168 !important;
     }
     .clockdas{
         display: none;
+        /* display: none; */
+    }
+    .clockdas1{
+        display: flex;
+        justify-content: start;
+        flex-direction: column-reverse;
+        width: 100%;
+        /* background-color: #0a4168; */
     }
     .imgbck2{
         display: flex;
+        justify-content: center;
         align-items: center;
         width: 100%;
+        height: 360px;
+        /* border-radius: 10px; */
+        /* background-color: #B53471; */
+    }
+    .imgbc2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
         height: 100%;
+        /* background-color: #60a3bc; */
+        /* border-radius: 50px; */
+    }
+    .greetdas{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        /* flex-direction: column; */
+        height: 410px;
+        /* background-color: #3d77a0; */
+    }
+    .greetdas h3{
+        font-weight: bold;
+        font-size: 20px;
     }
     .imgbc2 img{
-        width: 80%;
+        width: 325px;
+        /* height: auto; */
     }
     .btn-logout-icone{
         display: flex;

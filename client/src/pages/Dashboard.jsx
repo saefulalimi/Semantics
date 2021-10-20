@@ -60,11 +60,19 @@ function Dashboard() {
           </nav>
         </div>
 
-        <div className="pagedas">
-          <div className="dasheade">
-            
-            <button className="btn-logout-icone" onClick={handleLogout}><BiExit className="iconeExit"/></button>
-            <Modal/>
+      <div className="pagedas">
+        <div className="dasheade">
+            <div className="dashnavrig">
+              <img src={logo} alt="img-logo" width="30px" height="20px"/>
+              <h6>Semantics App</h6>
+            </div>
+            <div className="dashnavlef">
+              <button className="btn-logout-icone" onClick={handleLogout}><BiExit className="iconeExit"/></button>
+              <Modal/>
+            </div>
+          </div>
+          <div className="clockdas1">
+            <Clock className="clcokfix" />
           </div>
           <div className="imgbck2">
             <div className="imgbc2">
@@ -74,6 +82,9 @@ function Dashboard() {
           <div className="clockdas">
             <Clock className="clcokfix" />
           </div>
+        </div>
+        <div className="greetdas">
+          <h3>Welcome to Semantics App!</h3>
         </div>
       </div>
       <div className="mobileNav">
