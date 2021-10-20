@@ -40,26 +40,66 @@ user.post(
   auth,
   upload.single("picture"),
   async (req, res, next) => {
-    const currentUser = req.currentUser;
+    try {
+      const currentUser = req.currentUser;
+      const { fullName, age, website, intro } = req.body;
 
-    const user = await userModel.findOne({ _id: currentUser._id });
-    if (!user) {
-      next({ code: 404, message: "User tidak ditemukan" });
-    }
+      if (
+        fullName !== "" &&
+        age !== "" &&
+        website !== "" &&
+        intro != "" &&
+        fullName !== null &&
+        age !== null &&
+        website !== null &&
+        intro != null
+      ) {
+        if (!req.file) {
+          return next({ code: 400, message: "Tolong masukan gambar anda" });
+        }
 
-    const avatar = await userModel.updateOne(
-      { _id: currentUser._id },
-      {
-        $set: { avatar: req.file.filename },
+        console.log("masuk updating");
+        const user = await userModel.findOne({ _id: currentUser._id });
+        if (!user) {
+          return next({ code: 404, message: "User tidak ditemukan" });
+        }
+
+        const avatar = await userModel.updateOne(
+          { _id: currentUser._id },
+          {
+            $set: {
+              avatar: req.file.filename,
+              fullName: fullName,
+              age: age,
+              website: website,
+              intro: intro,
+            },
+          }
+        );
+
+        const newUpdate = await userModel.findOne({ _id: currentUser._id });
+        console.log("selesai");
+        return res.status(200).json({
+          status: "success",
+          data: {
+            avatar:
+              "http://" +
+              req.hostname +
+              ":" +
+              process.env.PORT +
+              "/upload/" +
+              newUpdate.avatar,
+            fullName: newUpdate.fullName,
+            age: newUpdate.age,
+            website: newUpdate.website,
+            intro: newUpdate.intro,
+          },
+        });
       }
-    );
-
-    const newUpdate = await userModel.findOne({ _id: currentUser._id });
-
-    res.status(200).json({
-      status: "success",
-      image: "http://localhost:8888/upload/" + newUpdate.avatar,
-    });
+      return next({ code: 400, message: "Please Check Yor input" });
+    } catch (error) {
+      next(error);
+    }
   }
 );
 

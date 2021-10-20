@@ -13,7 +13,7 @@ const NotesList = ({
   setEditNote,
 }) => {
   return (
-    <div className="notes-list h-full ">
+    <div className="notes-list h-full py-3">
       <AddNote
         note={note}
         setNote={setNote}

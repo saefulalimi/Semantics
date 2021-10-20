@@ -10,31 +10,24 @@ class userController {
     try {
       const { userName, email, password, confir } = req.body;
       if (!userName || typeof userName !== "string") {
-        const newError = new Error();
-        newError.name = "InvalidInput";
-        newError.message = "Invalid Username";
-        throw newError;
+        return next({ code: 400, message: "Invalid Input in Username" });
       }
 
       if (!email || typeof userName !== "string") {
-        const newError = new Error();
-        newError.name = "InvalidInput";
-        newError.message = "Invalid Email";
-        throw newError;
-      }
-
-      if (password !== confir) {
-        const newError = new Error();
-        newError.name = "InvalidInput";
-        newError.message = "Password is not same";
-        throw newError;
+        return next({ code: 400, message: "Invalid Input in Email" });
       }
 
       if (password.length < 8) {
-        const newError = new Error();
-        newError.name = "InvalidInput";
-        newError.message = "Password to small, min 8 char";
-        throw newError;
+        return next({ code: 411, message: "Password To Small Min 8 Char" });
+      }
+
+      if (password !== confir) {
+        return next({ code: 417, message: "Invalid Input in Password" });
+      }
+
+      const checkUser = await user.findOne({ email: email });
+      if (checkUser) {
+        return next({ code: 409, message: "Account has Registered" });
       }
 
       const hashPass = await bcrypt.hash(password, 10);
@@ -56,28 +49,21 @@ class userController {
 
   static log = async (req, res, next) => {
     try {
+      console.log("masuk backend");
       const { email, password } = req.body;
+      console.log({ email, password });
 
       if (!email) {
-        const newError = new Error();
-        newError.name = "ErrorLogin";
-        newError.message = "Invalid Email/Password";
-        throw newError;
+        return next({ code: 400, message: "Invalid Email/Password" });
       }
 
       const data = await user.findOne({ email: email }).lean();
       if (!data) {
-        const newError = new Error();
-        newError.name = "ErrorLogin";
-        newError.message = "Invalid Email/Password";
-        throw newError;
+        return next({ code: 400, message: "Invalid Email/Password" });
       }
 
       if (!bcrypt.compareSync(password, data.password)) {
-        const newError = new Error();
-        newError.name = "ErrorLogin";
-        newError.message = "Invalid Username/Password";
-        throw newError;
+        return next({ code: 400, message: "Invalid Email/Password" });
       }
 
       const jwtPayload = {
@@ -86,10 +72,37 @@ class userController {
 
       const token = jwt.sign(jwtPayload, process.env.SECREAT_KEY);
 
-      res.status(200).json({
-        token: token,
-        activity: data.activity,
-      });
+      if (data.avatar === null) {
+        res.status(200).json({
+          token: token,
+          dataUser: {
+            fullName: data.fullName,
+            age: data.age,
+            website: data.website,
+            intro: data.intro,
+            avatar: data.avatar,
+            activity: data.activity,
+          },
+        });
+      } else {
+        res.status(200).json({
+          token: token,
+          dataUser: {
+            fullName: data.fullName,
+            age: data.age,
+            website: data.website,
+            intro: data.intro,
+            avatar:
+              "http://" +
+              req.hostname +
+              ":" +
+              process.env.PORT +
+              "/upload/" +
+              data.avatar,
+            activity: data.activity,
+          },
+        });
+      }
     } catch (error) {
       next(error);
     }
@@ -97,20 +110,28 @@ class userController {
 
   static findUser = async (req, res, next) => {
     try {
-      const { token } = req.body;
-      const data = jwt.verify(token, process.env.SECREAT_KEY);
-      const user = await user.findOne({ _id: data.id });
+      const currentUser = req.currentUser;
+      const user = await user.findOne({ _id: currentUser._id });
 
       if (!user) {
-        const newError = new Error();
-        newError.name = "UserNotFound";
-        newError.message = "User Not Found";
-        throw newError;
+        return next({ code: 404, message: "user not found" });
       }
 
       res.status(200).json({
         message: "sucess, getting user",
-        user,
+        data: {
+          avatar:
+            "http://" +
+            req.hostname +
+            ":" +
+            process.env.PORT +
+            "/upload/" +
+            user.avatar,
+          fullName: user.fullName,
+          age: age.age,
+          website: user.website,
+          intro: user.intro,
+        },
       });
     } catch (error) {
       next(error);
@@ -122,24 +143,35 @@ class userController {
       const currentUser = req.currentUser;
       const { fName, age, website, intro } = req.body;
 
-      const findUser = await user.findOne({ _id: currentUser._id });
+      if (
+        fName !== "" &&
+        age !== "" &&
+        website !== "" &&
+        intro != "" &&
+        fName !== null &&
+        age !== null &&
+        website !== null &&
+        intro != null
+      ) {
+        const findUser = await user.findOne({ _id: currentUser._id });
 
-      if (!findUser) {
-        next({ code: 404, message: "User not found" });
-        return;
-      }
-
-      const update = await user.updateOne(
-        { _id: currentUser._id },
-        {
-          $set: { fullName: fName, age: age, website: website, intro: intro },
+        if (!findUser) {
+          return next({ code: 404, message: "User not found" });
         }
-      );
 
-      const newUserWithNewData = await user.findOne({ _id: currentUser._id });
-      res.status(200).json({
-        data: newUserWithNewData,
-      });
+        const update = await user.updateOne(
+          { _id: currentUser._id },
+          {
+            $set: { fullName: fName, age: age, website: website, intro: intro },
+          }
+        );
+
+        const newUserWithNewData = await user.findOne({ _id: currentUser._id });
+        res.status(200).json({
+          data: newUserWithNewData,
+        });
+      }
+      return next({ code: 400, message: "Please Check Input" });
     } catch (error) {
       next(error);
     }

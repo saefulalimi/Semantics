@@ -2,8 +2,8 @@ import React from "react";
 import { MdDeleteForever } from "react-icons/md";
 import { IoIosPricetags } from "react-icons/io";
 import { MdNotificationImportant } from "react-icons/md";
-import { BiNotepad } from "react-icons/bi";
-import { BsVectorPen } from "react-icons/bs";
+import { BiNotepad, BiLockOpen } from "react-icons/bi";
+import { BsVectorPen, BsFillBookFill } from "react-icons/bs";
 
 const Note = ({ id, text, date, handleDeleteNote, updateNote }) => {
   const borderColor = (number) => {
@@ -17,6 +17,45 @@ const Note = ({ id, text, date, handleDeleteNote, updateNote }) => {
       return "border-indigo-300";
     } else {
       return "border-purple-300";
+    }
+  };
+
+  const iconRandom = (number) => {
+    if (number < 2) {
+      return (
+        <MdNotificationImportant
+          className="delete-icon text-green-500 animate-pulse transition duration-50"
+          size="1.3em"
+        />
+      );
+    } else if (number < 4) {
+      return (
+        <IoIosPricetags
+          className="delete-icon text-blue-500 animate-pulse transition duration-50"
+          size="1.3em"
+        />
+      );
+    } else if (number < 6) {
+      return (
+        <BiNotepad
+          className="delete-icon text-red-500 animate-pulse transition duration-50"
+          size="1.3em"
+        />
+      );
+    } else if (number < 8) {
+      return (
+        <BiLockOpen
+          className="delete-icon text-green-500 animate-pulse transition duration-50"
+          size="1.3em"
+        />
+      );
+    } else {
+      return (
+        <BsFillBookFill
+          className="delete-icon text-purple-500 animate-pulse transition duration-50"
+          size="1.3em"
+        />
+      );
     }
   };
 
@@ -42,18 +81,7 @@ const Note = ({ id, text, date, handleDeleteNote, updateNote }) => {
           />
         </span>
         <div className="tag-wrapper flex flex-row">
-          <IoIosPricetags
-            className="delete-icon text-green-500 animate-pulse transition duration-50"
-            size="1.3em"
-          />
-          <BiNotepad
-            className="delete-icon text-blue-500 animate-pulse transition duration-800"
-            size="1.3em"
-          />
-          <MdNotificationImportant
-            className="delete-icon text-red-500 animate-pulse transition duration-300"
-            size="1.3em"
-          />
+          {iconRandom(Math.random() * 10)}
         </div>
       </div>
     </div>
