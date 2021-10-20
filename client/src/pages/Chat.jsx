@@ -22,7 +22,7 @@ function Chat() {
 
   return(
     <div>
-      <div class="bg-color flex flex-1 items-center justify-center">
+      <div class="bg-color flex flex-1 items-center justify-center rounded-md">
       {!showChat ? (
         <div class="h-screen w-full flex justify-center items-center bg-gradient-to-tr from-blue-900 to-blue-500">
     <div class="loginchat bg-image w-full sm:w-1/2 md:w-9/12 lg:w-1/2 mx-3 md:mx-5 lg:mx-0 shadow-md flex flex-col md:flex-row items-center rounded z-10 overflow-hidden bg-center bg-cover bg-blue-600">
