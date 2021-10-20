@@ -57,6 +57,18 @@ export const logoutUser = () => {
   };
 };
 
+export const getUpdate = (token) => {
+  return (async) => {
+    return Axios.get("/users", {
+      headers: {
+        token: token,
+      },
+    }).then((res) => {
+      return res;
+    });
+  };
+};
+
 //notes
 export const addNote = (data) => {
   return (async) => {

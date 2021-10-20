@@ -47,7 +47,6 @@ function FormUser({ setStatus, closeModalUser }) {
   };
 
   const handleUploadChange = async (e) => {
-    console.log(e.target.files[0]);
     const uploaded = e.target.files[0];
     setSaveImage(uploaded);
   };

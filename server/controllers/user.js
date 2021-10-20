@@ -10,29 +10,24 @@ class userController {
     try {
       const { userName, email, password, confir } = req.body;
       if (!userName || typeof userName !== "string") {
-        next({ code: 400, message: "Invalid Input in Username" });
-        return;
+        return next({ code: 400, message: "Invalid Input in Username" });
       }
 
       if (!email || typeof userName !== "string") {
-        next({ code: 400, message: "Invalid Input in Email" });
-        return;
+        return next({ code: 400, message: "Invalid Input in Email" });
       }
 
       if (password.length < 8) {
-        next({ code: 411, message: "Password To Small Min 8 Char" });
-        return;
+        return next({ code: 411, message: "Password To Small Min 8 Char" });
       }
 
       if (password !== confir) {
-        next({ code: 417, message: "Invalid Input in Password" });
-        return;
+        return next({ code: 417, message: "Invalid Input in Password" });
       }
 
       const checkUser = await user.findOne({ email: email });
       if (checkUser) {
-        next({ code: 409, message: "Account has Registered" });
-        return;
+        return next({ code: 409, message: "Account has Registered" });
       }
 
       const hashPass = await bcrypt.hash(password, 10);
@@ -59,19 +54,16 @@ class userController {
       console.log({ email, password });
 
       if (!email) {
-        next({ code: 400, message: "Invalid Email/Password" });
-        return;
+        return next({ code: 400, message: "Invalid Email/Password" });
       }
 
       const data = await user.findOne({ email: email }).lean();
       if (!data) {
-        next({ code: 400, message: "Invalid Email/Password" });
-        return;
+        return next({ code: 400, message: "Invalid Email/Password" });
       }
 
       if (!bcrypt.compareSync(password, data.password)) {
-        next({ code: 400, message: "Invalid Email/Password" });
-        return;
+        return next({ code: 400, message: "Invalid Email/Password" });
       }
 
       const jwtPayload = {
@@ -118,20 +110,28 @@ class userController {
 
   static findUser = async (req, res, next) => {
     try {
-      const { token } = req.body;
-      const data = jwt.verify(token, process.env.SECREAT_KEY);
-      const user = await user.findOne({ _id: data.id });
+      const currentUser = req.currentUser;
+      const user = await user.findOne({ _id: currentUser._id });
 
       if (!user) {
-        const newError = new Error();
-        newError.name = "UserNotFound";
-        newError.message = "User Not Found";
-        throw newError;
+        return next({ code: 404, message: "user not found" });
       }
 
       res.status(200).json({
         message: "sucess, getting user",
-        user,
+        data: {
+          avatar:
+            "http://" +
+            req.hostname +
+            ":" +
+            process.env.PORT +
+            "/upload/" +
+            user.avatar,
+          fullName: user.fullName,
+          age: age.age,
+          website: user.website,
+          intro: user.intro,
+        },
       });
     } catch (error) {
       next(error);
@@ -156,8 +156,7 @@ class userController {
         const findUser = await user.findOne({ _id: currentUser._id });
 
         if (!findUser) {
-          next({ code: 404, message: "User not found" });
-          return;
+          return next({ code: 404, message: "User not found" });
         }
 
         const update = await user.updateOne(
@@ -172,8 +171,7 @@ class userController {
           data: newUserWithNewData,
         });
       }
-      next({ code: 400, message: "Please Check Input" });
-      return;
+      return next({ code: 400, message: "Please Check Input" });
     } catch (error) {
       next(error);
     }

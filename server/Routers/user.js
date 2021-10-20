@@ -54,17 +54,14 @@ user.post(
         website !== null &&
         intro != null
       ) {
-        console.log("ini adalah file", req.file);
-        console.log("ini adalah filename", req.file.filename);
-
         if (!req.file) {
-          next({ code: 400, message: "Tolong masukan gambar anda" });
-          return;
+          return next({ code: 400, message: "Tolong masukan gambar anda" });
         }
 
+        console.log("masuk updating");
         const user = await userModel.findOne({ _id: currentUser._id });
         if (!user) {
-          next({ code: 404, message: "User tidak ditemukan" });
+          return next({ code: 404, message: "User tidak ditemukan" });
         }
 
         const avatar = await userModel.updateOne(
@@ -81,8 +78,8 @@ user.post(
         );
 
         const newUpdate = await userModel.findOne({ _id: currentUser._id });
-
-        res.status(200).json({
+        console.log("selesai");
+        return res.status(200).json({
           status: "success",
           data: {
             avatar:
@@ -99,8 +96,7 @@ user.post(
           },
         });
       }
-      next({ code: 400, message: "Please Check Yor input" });
-      return;
+      return next({ code: 400, message: "Please Check Yor input" });
     } catch (error) {
       next(error);
     }
