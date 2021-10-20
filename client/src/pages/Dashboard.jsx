@@ -63,7 +63,7 @@ function Dashboard() {
       <div className="pagedas">
         <div className="dasheade">
             <div className="dashnavrig">
-              <img src={logo} alt="img-logo" width="25px" height="15px"/>
+              <img src={logo} alt="img-logo" width="" height=""/>
               <h6>Semantics App</h6>
             </div>
             <div className="dashnavlef">
@@ -88,7 +88,7 @@ function Dashboard() {
         </div>
       </div>
       <div className="mobileNav">
-      <MobileNavbar />
+       <MobileNavbar />
       </div>
     </div>
   );

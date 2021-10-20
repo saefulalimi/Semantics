@@ -5,7 +5,6 @@
     display: flex;
     overflow-y: hidden;
     flex-direction: row;
-    /* background-color: #B53471; */
 }
 .dashboardpar{
     width: 15%;
@@ -65,22 +64,16 @@
 /* MAIN CONTENT DASBOARD  */
 .pagedas {
     width: 100%;
-    
-    /* background-color: aqua; */
-    /* background-color: #60a3bc; */
 }
 .dasheade{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     background: linear-gradient(to right, #0a3d62 , #60a3bc);
-    /* background: linear-gradient(#0a3d62, #60a3bc); */
 }
 .dashnavrig{
     display: flex;
     flex-direction: row;
-    /* justify-content: center;
-    align-items: center; */
     color: white;
     padding-left: 1rem;
 }
@@ -95,7 +88,6 @@
     width: 80%;
     height: 512px;
     position: absolute;
-    /* background-color: #60a3bc; */
     z-index: 0;
 }
 .dashnavlef{
@@ -106,7 +98,6 @@
     display: flex;
     position: relative;
     z-index: 1;
-    /* background-color: #0a3d62; */
 }
 .clockdas1{
     display: none;
@@ -142,31 +133,36 @@
         display: none;
     }
     .pagedas{
-        /* background-color: #0a4168 !important; */
         width: 100%;
-        /* height: 2rem; */
-        /* height: 100%; */
     }
     .dasheade{
         background: none;
         width: 100%;
-        /* height: 4rem; */
         background-color: #0a4168 !important;
     }
     .dashnavrig{
         width: 30%;
         height: 3rem;
     }
+    .dashnavrig img{
+        width: 30px;
+        height: 30px;
+        margin-top: .5rem;
+    }
+    .dashnavlef{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
     .clockdas{
         display: none;
-        /* display: none; */
     }
     .clockdas1{
         display: flex;
         justify-content: start;
         flex-direction: column-reverse;
         width: 100%;
-        /* background-color: #0a4168; */
     }
     .imgbck2{
         display: flex;
@@ -174,8 +170,6 @@
         align-items: center;
         width: 100%;
         height: 360px;
-        /* border-radius: 10px; */
-        /* background-color: #B53471; */
     }
     .imgbc2{
         display: flex;
@@ -183,17 +177,13 @@
         justify-content: center;
         width: 100%;
         height: 100%;
-        /* background-color: #60a3bc; */
-        /* border-radius: 50px; */
     }
     .greetdas{
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        /* flex-direction: column; */
         height: 410px;
-        /* background-color: #3d77a0; */
     }
     .greetdas h3{
         font-weight: bold;
@@ -201,7 +191,6 @@
     }
     .imgbc2 img{
         width: 325px;
-        /* height: auto; */
     }
     .btn-logout-icone{
         display: flex;
