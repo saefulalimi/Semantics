@@ -15,6 +15,7 @@
     height: 3rem;
     background-color: #0a4168;
     z-index: 2;
+    
 }
 .GenNot,
 .Cale,
@@ -51,4 +52,4 @@
         position: fixed;
         bottom: 0;
     }
-  } 
+} 
