@@ -13,7 +13,6 @@ import Activity from "./pages/Activity";
 import Calendar from "./pages/Calendar";
 import Chat from "./pages/Chat";
 
-
 function App() {
   return (
     <div className="App">

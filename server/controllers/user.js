@@ -19,13 +19,19 @@ class userController {
         return;
       }
 
-      if (password !== confir) {
-        next({ code: 400, message: "Invalid Input in Password" });
+      if (password.length < 8) {
+        next({ code: 411, message: "Password To Small Min 8 Char" });
         return;
       }
 
-      if (password.length < 8) {
-        next({ code: 400, message: "Password To Small Min 8 Char" });
+      if (password !== confir) {
+        next({ code: 417, message: "Invalid Input in Password" });
+        return;
+      }
+
+      const checkUser = await user.findOne({ email: email });
+      if (checkUser) {
+        next({ code: 409, message: "Account has Registered" });
         return;
       }
 
@@ -48,24 +54,23 @@ class userController {
 
   static log = async (req, res, next) => {
     try {
-      console.log('masuk backend')
+      console.log("masuk backend");
       const { email, password } = req.body;
-      console.log({email, password})
+      console.log({ email, password });
 
       if (!email) {
-        next({code:400, message: 'Invalid Email/Password'})
+        next({ code: 400, message: "Invalid Email/Password" });
         return;
       }
 
       const data = await user.findOne({ email: email }).lean();
       if (!data) {
-        next({code:400, message: 'Invalid Email/Password'})
+        next({ code: 400, message: "Invalid Email/Password" });
         return;
-
       }
 
       if (!bcrypt.compareSync(password, data.password)) {
-        next({code:400, message: 'Invalid Email/Password'})
+        next({ code: 400, message: "Invalid Email/Password" });
         return;
       }
 
@@ -75,10 +80,8 @@ class userController {
 
       const token = jwt.sign(jwtPayload, process.env.SECREAT_KEY);
 
-      // const ava = 'http://'+req.hostname+':'+process.env.PORT+'/upload/'+data.avatar;
-
-      if(data.avatar === null){
-          res.status(200).json({
+      if (data.avatar === null) {
+        res.status(200).json({
           token: token,
           dataUser: {
             fullName: data.fullName,
@@ -87,20 +90,26 @@ class userController {
             intro: data.intro,
             avatar: data.avatar,
             activity: data.activity,
-          }
+          },
         });
       } else {
         res.status(200).json({
-        token: token,
-        dataUser: {
-          fullName: data.fullName,
-          age: data.age,
-          website: data.website,
-          intro: data.intro,
-          avatar: 'http://'+req.hostname+':'+process.env.PORT+'/upload/'+data.avatar,
-          activity: data.activity,
-        }
-      });
+          token: token,
+          dataUser: {
+            fullName: data.fullName,
+            age: data.age,
+            website: data.website,
+            intro: data.intro,
+            avatar:
+              "http://" +
+              req.hostname +
+              ":" +
+              process.env.PORT +
+              "/upload/" +
+              data.avatar,
+            activity: data.activity,
+          },
+        });
       }
     } catch (error) {
       next(error);
