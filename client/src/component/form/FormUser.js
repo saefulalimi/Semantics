@@ -1,9 +1,36 @@
 import React, { useState } from "react";
 import axios from "../../utils/axios";
+import ErrorModal from "../modal/ErrorModal";
+import WarningModal from "../modal/WarningModal";
+import SuccessModal from "../modal/SuccessModal";
 
-function FormUser({ setStatus, closeModal }) {
+function FormUser({ setStatus, closeModalUser }) {
   const [saveImage, setSaveImage] = useState(null);
+  const [modal, setModal] = useState("hidden");
+  const [code, setCode] = useState("");
+
   const token = localStorage.getItem("token");
+
+  const closeModal = () => {
+    setModal("hidden");
+  };
+
+  const cekModal = (code) => {
+    if (code === 200) {
+      return (
+        <SuccessModal message={"Success Update Info"} closeModal={closeModal} />
+      );
+    } else if (code === 400) {
+      return (
+        <WarningModal
+          message={"Please Check Your Input again"}
+          closeModal={closeModal}
+        />
+      );
+    } else if (code === 404) {
+      return <ErrorModal message={"User Not Found"} closeModal={closeModal} />;
+    }
+  };
 
   const [data, setData] = useState({
     fullName: "",
@@ -45,10 +72,16 @@ function FormUser({ setStatus, closeModal }) {
             },
           })
           .then((res) => {
-            console.log("ini Response", res);
+            setCode(res.status);
+            setModal("block");
             const hasil = res.data.data;
             localStorage.setItem("Userinfo", JSON.stringify(hasil));
             setSaveImage(null);
+            return res.status;
+          })
+          .catch((err) => {
+            setCode(err.response.status);
+            setModal("block");
           });
       };
       pictureUpload();
@@ -149,7 +182,8 @@ function FormUser({ setStatus, closeModal }) {
                       <div className="md:col-span-5 text-right">
                         <div className="inline-flex items-end">
                           <button
-                            onClick={closeModal}
+                            onClick={closeModalUser}
+                            type="button"
                             className="mx-2 bg-gray-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
                           >
                             close
@@ -172,6 +206,15 @@ function FormUser({ setStatus, closeModal }) {
           </div>
         </div>
       </div>
+      {code !== "" ? (
+        <div
+          className={`${modal} fixed inset-0 overflow-y-auto transition ease-in-out duration-300 my-auto md:my-28`}
+        >
+          {cekModal(code)}
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

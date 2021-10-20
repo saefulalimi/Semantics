@@ -12,7 +12,7 @@ function Profile() {
     setModal("block");
   };
 
-  const closeModal = () => {
+  const closeModalUser = () => {
     setModal("hidden");
   };
 
@@ -89,7 +89,7 @@ function Profile() {
       <div
         className={`${modal} fixed z-10 inset-0 overflow-y-auto transition ease-in-out duration-300 md:h-screen md:w-screen`}
       >
-        <FormUser closeModal={closeModal} setStatus={setStatus} />
+        <FormUser closeModalUser={closeModalUser} setStatus={setStatus} />
       </div>
     </div>
   );

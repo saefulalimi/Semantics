@@ -143,24 +143,37 @@ class userController {
       const currentUser = req.currentUser;
       const { fName, age, website, intro } = req.body;
 
-      const findUser = await user.findOne({ _id: currentUser._id });
+      if (
+        fName !== "" &&
+        age !== "" &&
+        website !== "" &&
+        intro != "" &&
+        fName !== null &&
+        age !== null &&
+        website !== null &&
+        intro != null
+      ) {
+        const findUser = await user.findOne({ _id: currentUser._id });
 
-      if (!findUser) {
-        next({ code: 404, message: "User not found" });
-        return;
-      }
-
-      const update = await user.updateOne(
-        { _id: currentUser._id },
-        {
-          $set: { fullName: fName, age: age, website: website, intro: intro },
+        if (!findUser) {
+          next({ code: 404, message: "User not found" });
+          return;
         }
-      );
 
-      const newUserWithNewData = await user.findOne({ _id: currentUser._id });
-      res.status(200).json({
-        data: newUserWithNewData,
-      });
+        const update = await user.updateOne(
+          { _id: currentUser._id },
+          {
+            $set: { fullName: fName, age: age, website: website, intro: intro },
+          }
+        );
+
+        const newUserWithNewData = await user.findOne({ _id: currentUser._id });
+        res.status(200).json({
+          data: newUserWithNewData,
+        });
+      }
+      next({ code: 400, message: "Please Check Input" });
+      return;
     } catch (error) {
       next(error);
     }
