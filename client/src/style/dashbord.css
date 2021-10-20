@@ -150,8 +150,12 @@
     .dasheade{
         background: none;
         width: 100%;
-        height: 2rem;
+        /* height: 4rem; */
         background-color: #0a4168 !important;
+    }
+    .dashnavrig{
+        width: 30%;
+        height: 3rem;
     }
     .clockdas{
         display: none;
