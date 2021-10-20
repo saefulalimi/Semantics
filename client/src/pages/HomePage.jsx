@@ -28,7 +28,7 @@ function HomePage() {
             </div>
 
           <div className="childbody2">
-            <img src={Bck1}/>
+            <img src={Bck1} alt="..."/>
           </div>
       </div>
 
