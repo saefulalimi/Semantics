@@ -10,8 +10,7 @@ class noteController {
 
       const findUser = await userModel.findOne({ _id: currentUser._id });
       if (!findUser) {
-        next({ code: 404, message: "User Not Found" });
-        return;
+        return next({ code: 404, message: "User Not Found" });
       }
 
       const notes = findUser.activity.subject;
@@ -37,8 +36,7 @@ class noteController {
 
       const user = await userModel.findOne({ _id: currentUser._id });
       if (!user) {
-        next({ code: 404, message: "User Not Found" });
-        return;
+        return next({ code: 404, message: "User Not Found" });
       }
       const notes = user.activity.subject;
       res.status(200).json({
@@ -56,8 +54,7 @@ class noteController {
 
       const data = await userModel.findOne({ _id: currentUser._id });
       if (!data) {
-        next({ code: 404, message: "User Not Found" });
-        return;
+        return next({ code: 404, message: "User Not Found" });
       }
       const latestNote = data.activity.subject;
       const filtering = latestNote.filter((note) => note.id !== remove.id);
@@ -80,8 +77,7 @@ class noteController {
 
       const latestData = await userModel.findOne({ _id: currentUser._id });
       if (!latestData) {
-        next({ code: 404, message: "User Not Found" });
-        return;
+        return next({ code: 404, message: "User Not Found" });
       }
 
       let updating = [];

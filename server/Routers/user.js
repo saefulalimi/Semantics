@@ -43,50 +43,60 @@ user.post(
     try {
       const currentUser = req.currentUser;
       const { fullName, age, website, intro } = req.body;
-      console.log("ini adalah file", req.file);
-      console.log("ini adalah filename", req.file.filename);
 
-      if (!req.file) {
-        next({ code: 400, message: "Tolong masukan gambar anda" });
-        return;
-      }
-
-      const user = await userModel.findOne({ _id: currentUser._id });
-      if (!user) {
-        next({ code: 404, message: "User tidak ditemukan" });
-      }
-
-      const avatar = await userModel.updateOne(
-        { _id: currentUser._id },
-        {
-          $set: {
-            avatar: req.file.filename,
-            fullName: fullName,
-            age: age,
-            website: website,
-            intro: intro,
-          },
+      if (
+        fullName !== "" &&
+        age !== "" &&
+        website !== "" &&
+        intro != "" &&
+        fullName !== null &&
+        age !== null &&
+        website !== null &&
+        intro != null
+      ) {
+        if (!req.file) {
+          return next({ code: 400, message: "Tolong masukan gambar anda" });
         }
-      );
 
-      const newUpdate = await userModel.findOne({ _id: currentUser._id });
+        console.log("masuk updating");
+        const user = await userModel.findOne({ _id: currentUser._id });
+        if (!user) {
+          return next({ code: 404, message: "User tidak ditemukan" });
+        }
 
-      res.status(200).json({
-        status: "success",
-        data: {
-          avatar:
-            "http://" +
-            req.hostname +
-            ":" +
-            process.env.PORT +
-            "/upload/" +
-            newUpdate.avatar,
-          fullName: newUpdate.fullName,
-          age: newUpdate.age,
-          website: newUpdate.website,
-          intro: newUpdate.intro,
-        },
-      });
+        const avatar = await userModel.updateOne(
+          { _id: currentUser._id },
+          {
+            $set: {
+              avatar: req.file.filename,
+              fullName: fullName,
+              age: age,
+              website: website,
+              intro: intro,
+            },
+          }
+        );
+
+        const newUpdate = await userModel.findOne({ _id: currentUser._id });
+        console.log("selesai");
+        return res.status(200).json({
+          status: "success",
+          data: {
+            avatar:
+              "http://" +
+              req.hostname +
+              ":" +
+              process.env.PORT +
+              "/upload/" +
+              newUpdate.avatar,
+            fullName: newUpdate.fullName,
+            age: newUpdate.age,
+            website: newUpdate.website,
+            intro: newUpdate.intro,
+          },
+        });
+      }
+      return next({ code: 400, message: "Please Check Yor input" });
     } catch (error) {
       next(error);
     }
