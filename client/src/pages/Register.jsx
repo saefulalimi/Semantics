@@ -38,8 +38,8 @@ function Register() {
       );
     } else if (resCode === 417) {
       return (
-        <ErrorModal
-          message={"All Input Must Be Filled In"}
+        <WarningModal
+          message={"Please Check Your Input Again"}
           closeModal={closeModal}
         />
       );
@@ -57,6 +57,10 @@ function Register() {
           closeModal={closeModal}
         />
       );
+    } else if (resCode === 411) {
+      return (
+        <WarningModal message={"Password Min 8 Char"} closeModal={closeModal} />
+      );
     }
   };
 
@@ -70,7 +74,6 @@ function Register() {
     };
     try {
       const response = await dispatch(register(data)).then((res) => {
-        console.log(res);
         if (res === 201) {
           setResCode(res);
           setModal("block");

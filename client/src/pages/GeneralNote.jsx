@@ -5,6 +5,7 @@ import "../style/generalnote.css";
 import Main from "../component/generalnote/Main";
 import Sidebar from "../component/generalnote/Sidebar";
 import ButtonActiveGN from "../component/navbar/ButtonActiveGN";
+import MobileNavbar from "../component/navbar/mobile/MobileNavbar";
 
 function App() {
   const [notes, setNotes] = useState(
@@ -69,6 +70,9 @@ function App() {
       </div>
       <div className="w-full right md:w-full md:mx-8 md:my-5 md:flex-1">
         <Main activeNote={getActiveNote()} onUpdateNote={onUpdateNote} />
+      </div>
+      <div className="mobileNav">
+        <MobileNavbar />
       </div>
     </div>
   );

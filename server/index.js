@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-const url = process.env.URLm || "mongodb://localhost:27017/note";
+const url = process.env.URL;
 
 io.on("connection", (socket) => {
   console.log(`User Connected : ${socket.id}`);
