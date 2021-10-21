@@ -7,6 +7,7 @@ import NotesList from "../component/note/NotesList";
 import Search from "../component/note/Search";
 import Header from "../component/note/Header";
 import * as action from "../redux/action";
+import MobileNavbar from "../component/navbar/mobile/MobileNavbar";
 
 const Activity = () => {
   const dispatch = useDispatch();
@@ -106,6 +107,9 @@ const Activity = () => {
           handleDeleteNote={deleteNote}
           updateNote={updateNote}
         />
+      </div>
+      <div className="mobileNav">
+        <MobileNavbar />
       </div>
     </div>
   );
