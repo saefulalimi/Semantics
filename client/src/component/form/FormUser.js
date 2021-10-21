@@ -86,7 +86,6 @@ function FormUser({ setStatus, closeModalUser }) {
       pictureUpload();
       setStatus(true);
     } catch (error) {
-      console.log(error);
     }
   }
   return (

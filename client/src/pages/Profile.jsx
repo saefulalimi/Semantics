@@ -22,8 +22,6 @@ function Profile() {
   useEffect(() => {
     if (status) {
       setDataUser(JSON.parse(localStorage.getItem("Userinfo")));
-
-      console.log("ini adalah useEffect update profile", dataUser);
       setStatus(false);
     }
   }, [status, dataUser]);
