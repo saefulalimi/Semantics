@@ -83,13 +83,12 @@ function Register() {
         setModal("block");
       });
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
   return (
     <div className="homeReg">
-      {/* <NavigateReg/> */}
       <div className="containerReg">
         <div className="wraperReg">
           <Box

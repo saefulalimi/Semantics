@@ -83,14 +83,6 @@ function ModalInfo() {
             entering the same id, for example 123
           </p>
         </div>
-
-        {/* <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
-        </form> */}
         <button onClick={closeModal}>
           <BiExit className="iconExit" />
         </button>

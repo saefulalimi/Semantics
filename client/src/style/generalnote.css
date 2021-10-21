@@ -39,7 +39,7 @@ button:hover {
   padding: 25px;
   /* border: 1px solid none;
   border-bottom: 1px solid; */
-  background-color: #6d214f;
+  background-color: #7158e2;
 }
 .app-sidebar-header h4 {
   margin: 0;
@@ -53,7 +53,7 @@ button:hover {
 .app-sidebar-header button {
   border: 1px solid none;
   border-radius: 3px;
-  background-color: #c78aaf;
+  background-color: #c8c3db;
 }
 
 .app-sidebar-note {

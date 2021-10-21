@@ -26,8 +26,7 @@ function Dashboard() {
 
   const handleLogout = async () => {
     try {
-      const response = await dispatch(logoutUser());
-      console.log("sucess logout", response);
+      await dispatch(logoutUser());
       history.replace("/login");
     } catch (error) {
       console.log(error);
@@ -38,7 +37,7 @@ function Dashboard() {
     async function fetchData() {
       await axios
         .get("https://api.quotable.io/random")
-        .then((res) => console.log(res));
+        .then((res) =>(res));
     }
     fetchData();
   }, []);

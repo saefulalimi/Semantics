@@ -13,7 +13,7 @@
 }
 .navdash{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     margin: 5px;
@@ -29,7 +29,7 @@
     border: 1px solid none;
     border-radius: 5px;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     padding-left: .5rem;
     align-items: center;
     color: white;
@@ -67,7 +67,7 @@
 }
 .dasheade{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     flex-direction: row;
     background: linear-gradient(to right, #0a3d62 , #60a3bc);
 }
@@ -163,7 +163,7 @@
     }
     .clockdas1{
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
         flex-direction: column-reverse;
         width: 100%;
     }

@@ -30,7 +30,6 @@ function Login() {
 
     try {
       const res = await dispatch(loginUser(data)).then((res) => {
-        console.log(res);
 
         if (res === 400) {
           setError("Invalid Email/Password");
@@ -40,13 +39,11 @@ function Login() {
         }
       });
     } catch (error) {
-      console.log(error);
     }
   };
 
   return (
     <div className="homeReg">
-      {/* <NavigateLog/> */}
       <div className="containerReg">
         <div className="wraperReg">
           <Box

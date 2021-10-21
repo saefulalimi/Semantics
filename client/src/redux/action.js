@@ -37,7 +37,7 @@ export const loginUser = (data) => {
           return err.response.status;
         });
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 };

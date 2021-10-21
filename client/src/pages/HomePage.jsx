@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import NavBar from "../component/navbar/navbarhome/navbarhome";
 import "../style/homepage.css";
 import Bck1 from "../assets/bck1.png";
@@ -12,7 +11,6 @@ import general from "../assets/general.png";
 import general1 from "../assets/general1.png";
 
 function HomePage() {
-  const data = useSelector((state) => state);
 
   return (
     <div>
@@ -39,7 +37,7 @@ function HomePage() {
           <h3>What do we get in semantics?</h3>
         </div>
 
-        <div clasName="childbody4">
+        <div>
           <div className="badan1">
             <div className="badan1img">
               <img src={activty} alt="img-intro" />
@@ -54,10 +52,6 @@ function HomePage() {
               </p>
             </div>
           </div>
-
-          {/* <div className="btnMid">
-                <Link to="/register"><button className="btnHome" >Click Here</button></Link>
-                </div> */}
 
           <div className="badan2">
             <div className="badan2main">
@@ -76,7 +70,7 @@ function HomePage() {
 
           <div className="badan3">
             <div className="badan3img">
-              <img src={chat} alt="img-intro" srcset="" />
+              <img src={chat} alt="img-intro" />
             </div>
             <div className="badan3main">
               <h3>you can communicate with live chat</h3>
@@ -95,8 +89,8 @@ function HomePage() {
             <h6>collaboration with :</h6>
           </div>
           <div className="colabImg">
-            <img src={skilvul} className="skilvul" alt="" srcset="" />
-            <img src={impact} alt="" srcset="" />
+            <img src={skilvul} className="skilvul" alt="img-skilvul" />
+            <img src={impact} alt="img-impact" />
           </div>
         </div>
 
@@ -106,7 +100,6 @@ function HomePage() {
           </p>
         </div>
       </div>
-      {console.log(data)}
     </div>
   );
 }

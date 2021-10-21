@@ -5,9 +5,9 @@ const SuccessModal = ({ message, closeModal }) => {
   return (
     <div>
       <div className="flex w-full  max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
-        <div class="w-10 flex items-center justify-center md:w-12 bg-green-500">
+        <div className="w-10 flex items-center justify-center md:w-12 bg-green-500">
           <svg
-            class="w-6 h-6 text-white fill-current"
+            className="w-6 h-6 text-white fill-current"
             viewBox="0 0 40 40"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -16,10 +16,10 @@ const SuccessModal = ({ message, closeModal }) => {
         </div>
         <div className="flex w-full justify-between items-center px-2 py-2 md:px-4 ">
           <div className="mx-3 mt-2">
-            <span class="font-semibold text-green-500 dark:text-green-400">
+            <span className="font-semibold text-green-500 dark:text-green-400">
               Success
             </span>
-            <p class="text-sm text-gray-600 dark:text-gray-200">{message}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-200">{message}</p>
           </div>
           <button onClick={closeModal}>
             <AiFillCloseCircle size="1.3rem" />

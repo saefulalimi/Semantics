@@ -39,7 +39,7 @@ const Sidebar = ({
             className={`app-sidebar-note border-t-2 border-black ${
               id === activeNote && "active"
             }`}
-            key={id}
+            key={i}
             onClick={() => setActiveNote(id)}
           >
             <div className="sidebar-note-title">
