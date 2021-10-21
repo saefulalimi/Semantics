@@ -4,11 +4,9 @@ export const register = (data) => {
   return (async) => {
     return Axios.post(`/users/register`, data)
       .then((res) => {
-        console.log(res);
         return res.status;
       })
       .catch((err) => {
-        console.log(err);
         return err.response.status;
       });
   };
@@ -77,7 +75,6 @@ export const addNote = (data) => {
         token: data.token,
       },
     }).then((res) => {
-      console.log(res);
       localStorage.setItem("subject", JSON.stringify(res.data.data));
       return res.data.data;
     });
@@ -91,7 +88,6 @@ export const getNotes = (data) => {
         token: data.token,
       },
     }).then((res) => {
-      console.log(res);
       return res.data;
     });
   };
@@ -104,7 +100,6 @@ export const deleteNote = (data) => {
         token: data.token,
       },
     }).then((res) => {
-      console.log(res);
       localStorage.setItem("subject", JSON.stringify(res.data.data));
     });
   };

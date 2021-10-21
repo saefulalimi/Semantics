@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import FormUser from "../component/form/FormUser";
+import MobileNavbar from "../component/navbar/mobile/MobileNavbar";
+import { Link } from "react-router-dom";
+import { BsBackspaceFill } from "react-icons/bs";
 
 function Profile() {
   // const [saveImage, setSaveImage] = useState(null);
@@ -31,23 +34,29 @@ function Profile() {
 
   // https://source.unsplash.com/random/350x350
   return (
-    <div className="">
-      <section className="justify-center md:mt-32 bg-white dark:bg-gray-800">
-        <div className="container px-6 py-8 mx-auto">
-          <div className="items-center lg:flex">
-            <div className="lg:w-1/2">
+    <div className="bg-gradient-to-r from-green-400 to-blue-500">
+      <Link to="/dashboard">
+        <BsBackspaceFill
+          className="hidden md:block my-3 mx-5 text-black hover:cursor-pointer"
+          size="1.8rem"
+        />
+      </Link>
+      <section className="justify-center md:mt-32 bg-transparent dark:bg-gray-800">
+        <div className="container px-6 py-6 mx-auto ">
+          <div className="items-center lg:flex ">
+            <div className="lg:w-1/2 relative px-4 py-5 shadow-lg sm:rounded-3xl sm:p-20 bg-clip-padding border border-gray-200">
               <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">
                 Who I am
               </h2>
               <p className="mt-4 text-gray-500 dark:text-gray-400 lg:max-w-md">
-                <span className="font-bold">
+                <span className="font-bold text-black">
                   {dataUser !== {} ? dataUser.fullName : "Human"} ~
                 </span>
-                <span className="font-semibold">
+                <span className="font-semibold text-black">
                   {dataUser !== {} ? dataUser.age : "Age"}
                 </span>
                 .
-                <p>
+                <p className="text-black">
                   {dataUser !== {}
                     ? dataUser.intro
                     : `Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -90,6 +99,9 @@ function Profile() {
         className={`${modal} fixed z-10 inset-0 overflow-y-auto transition ease-in-out duration-300 md:h-screen md:w-screen`}
       >
         <FormUser closeModalUser={closeModalUser} setStatus={setStatus} />
+      </div>
+      <div className="mobileNav">
+        <MobileNavbar />
       </div>
     </div>
   );

@@ -1,9 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { BsBackspaceFill } from "react-icons/bs";
 
 const Header = ({ handleToggleDarkMode }) => {
   return (
     <div className="header">
-      <h1 className="text-2xl">Important Notes</h1>
+      <Link to="/dashboard">
+        <BsBackspaceFill
+          className="hidden md:block my-3 text-black hover:cursor-pointer"
+          size="1.8rem"
+        />
+      </Link>
+      <h1 className="text-2xl md:font-bold">Important Notes</h1>
       <button
         onClick={() =>
           handleToggleDarkMode((previousDarkMode) => !previousDarkMode)
