@@ -1,9 +1,81 @@
 .bodycal{
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 720px;
+    background-color: #641a48;
+}
+.fc{
+    border: 8px solid #f368e0;
+    border-radius: 10px;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    padding: 1rem;
+    width: 100%;
+    height: 680px;
+    border-radius: 10px;
+    background-color: rgb(248, 248, 248);
+}
+
+.fc-header-toolbar{
+    padding: none;
+    background-color: rgb(250, 250, 250);
+    /* padding: 1rem; */
+    /* border-color: #00d2d3; */
+   
+    /* margin-top: 1rem; */
+}
+.fc-toolbar-title{
+    font-weight: bolder;
 }
 .callenda{
     width: 90%;
-    height: auto;
-    margin: 20px;
+    /* height: 720px; */
+    /* margin: 20px; */
+}
+.fullcalenda{
+    width: 100%;
+    height: 720px;
+}
+@media (max-width: 380px){
+    .bodycal{
+        background-color: #e6e6e6;
+    }
+    .fc{
+        border-radius: 10px;
+        background-color: rgb(248, 248, 248);
+    }
+    .fc-header-toolbar{
+        background-color: rgb(248, 248, 248);
+        /* padding: 1rem; */
+        /* border-color: #00d2d3; */
+        /* border: 8px solid #f368e0;
+        border-radius: 10px;
+        border-left: none;
+        border-right: none;
+        border-bottom: none; */
+        /* margin-top: 1rem; */
+    }
+    .fc-toolbar-chunk{
+        display: flex;
+        flex-direction: row;
+        /* background-color: teal; */
+    }
+    .fc-toolbar-title{
+        font-weight: bolder;
+    }
+    .fc-prev-button{
+        background-color: yellow !important;
+        /* width: 2rem; */
+        /* height: 1rem; */
+    }
+    .fc-next-button{
+        background-color: yellow !important;
+        /* width: 2rem; */
+    }
+    .fc-icone{
+        align-items: center;
+    }
 }

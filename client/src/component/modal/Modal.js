@@ -43,7 +43,7 @@ function ModalInfo() {
         </button>
       </div>
       <Modal
-      // className="ModalInfo"
+      // className="z-40"
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
@@ -53,21 +53,37 @@ function ModalInfo() {
         <h2 ref={(_subtitle) => (subtitle = _subtitle)}>
           Welcome to Semantics!
         </h2>
-        <div>I am a modal</div>
+        <div>Services Semantics</div>
         <div>
           <p>
-            What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
-            printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown
-            printer took a galley of type and scrambled it to make a type
-            specimen book. It has survived not only five centuries, but also the
-            leap into electronic typesetting, remaining essentially unchanged.
-            It was popularised in the 1960s with the release of Letraset sheets
-            containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem
-            Ipsum
+             Hello I'm a server from semantics, what's your need 
+             this time? if you don't know how to use the feature, 
+             try reading the information below
+          </p>
+          <p>
+            Profile, you can use to complete your biodata about your 
+            full name, age, web and intro and you can update your 
+            profile photo too
+          </p>
+          <p>
+            Calendar you can use to view information or date, day, 
+            today of the month, you can also view month and year
+          </p>
+          <p>
+            You can use general notes to note things that are 
+            temporary and long
+          </p>
+          <p>
+            You can also use Activty Notes to record activities or 
+            points that are long, and activity notes can only store 
+            200 character letters
+          </p>
+          <p>
+            you can use the live chat feature with your friends by 
+            entering the same id, for example 123
           </p>
         </div>
+
         {/* <form>
           <input />
           <button>tab navigation</button>

@@ -13,6 +13,7 @@ export class Calendar extends Component {
                 <div className="bodycal col-sm-12">   
                     <div className="callenda">
                     <FullCalendar  
+                    className="fullcalenda"
                      className="fullcalendar"
                     defaultView="dayGridMonth"  
                     plugins={[dayGridPlugin]}  
