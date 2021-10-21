@@ -80,7 +80,7 @@ function Profile() {
                 <div className="max-w-lg">
                   <h3 className="text-2xl font-semibold">Profile Picture</h3>
                   <img
-                    className="md:hover:transform md:hover:scale-125 transition ease-in-out duration-300 object-cover object-center w-full h-64 rounded-md shadow"
+                    className="img-form"
                     src={
                       dataUser !== {}
                         ? dataUser.avatar

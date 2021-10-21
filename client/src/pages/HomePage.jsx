@@ -4,6 +4,7 @@ import NavBar from "../component/navbar/navbarhome/navbarhome";
 import "../style/homepage.css";
 import Bck1 from "../assets/bck1.png";
 import { Link } from "react-router-dom";
+import chat from "../assets/chat.png"
 import skilvul from "../assets/skilvul.png";
 import impact from "../assets/impactbyte.png";
 import activty from "../assets/activity.png";
@@ -75,14 +76,15 @@ function HomePage() {
 
           <div className="badan3">
             <div className="badan3img">
-              <img src={activty} alt="img-intro" srcset="" />
+              <img src={chat} alt="img-intro" srcset="" />
             </div>
             <div className="badan3main">
-              <h3>TITLE</h3>
+              <h3>you can communicate with live chat</h3>
               <span>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-                natus deleniti exercitationem voluptatibus quia omnis.
-                Praesentium amet hic exercitationem earum.
+                you can use the live chat feature with your friends by 
+               entering the same id, and you can communicate when there 
+               is a lesson schedule, homework or you can also ask about 
+               the situation
               </span>
             </div>
           </div>
