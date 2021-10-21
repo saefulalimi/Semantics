@@ -98,7 +98,7 @@ function Dashboard() {
           </div>
           <div className="imgbck2">
             <div className="imgbc2">
-              <img src={bck2} />
+              <img src={bck2} alt="" />
             </div>
           </div>
           <div className="clockdas ">
